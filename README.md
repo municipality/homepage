@@ -1,3 +1,3 @@
-#Angular2 Template
+#Brian Lee's Homepage Rework
 
-Angular2 with Typescript, Node and Express
+In Progress
