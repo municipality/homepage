@@ -9,7 +9,7 @@ export class InstagramService {
 
     }
 
-    getMostRecent (num : number) {
+    getMostRecent () {
         return this.http.get(`http://localhost:3000/api/instagram-recents`)
                .map((response) => {
                    if(response.status === 200) {
