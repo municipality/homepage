@@ -18,7 +18,6 @@ class App implements OnInit{
     ngOnInit () {
         this.instagramService.getMostRecent(3)
         .subscribe(res => {
-            debugger
             console.log(res);
         });
     }

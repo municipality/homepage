@@ -10,22 +10,15 @@ export class InstagramService {
     }
 
     getMostRecent (num : number) {
-        var info = {
-            client_id : 'aaa79cb32b094331ac3877dd6d8e01d4',
-            count : num
-        }
-        var userId = '192561481';
-        var headers = new Headers();
-        var searchParams = new URLSearchParams();
-        searchParams.append('client_id', info.client_id);
+        return this.http.get(`http://localhost:3000/api/instagram-recents`)
+               .map((response) => {
+                   if(response.status === 200) {
+                       return response.json();
+                   }
+                   else {
+                       throw new Error("No response from instagram");
+                   }
 
-        return this.http.get(`https://api.instagram.com/v1/users/${userId}/media/recent`, {
-            headers : headers,
-            search : searchParams
-        }).map((res) => {
-            debugger
-            res = res.json();
-            return res;
-        })
+               });
     }
 }

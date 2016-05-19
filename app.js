@@ -4,6 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var http = require("http");
+var request = require('request');
 
 var users = require('./routes/users');
 
@@ -27,6 +29,24 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+var router = express.Router();
+
+router.get('/instagram-recents', function(req, res) {
+    var info = {
+        user : 'best_blee_it',
+        count : 3
+    }
+    request("http://instagram.com/best_blee_it/media", function(error, response, body) {
+        res.json(JSON.parse(body));
+
+
+    });
+});
+
+app.use('/api', router);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
