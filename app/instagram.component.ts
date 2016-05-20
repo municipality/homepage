@@ -8,8 +8,6 @@ import {InstagramService} from './instagram.service';
         <p class="section-header">Instagram</p>
         <div class="ig-container">
             <div *ngIf="showLoadingMask" class="ig-loading">
-
-
                 <div class="ig-loading-tag">
                     <div class="loader"></div>
                 </div>

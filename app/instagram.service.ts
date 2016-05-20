@@ -10,7 +10,9 @@ export class InstagramService {
     }
 
     getMostRecent () {
-        return this.http.get(`http://localhost:3000/api/instagram-recents`)
+        let url = `http://municipality.herokuapp.com/api/instagram-recents`;
+        //let url = `http://localhost:3000/api/instagram-recents`;
+        return this.http.get(url)
                .map((response) => {
                    if(response.status === 200) {
                        return response.json();
