@@ -40,7 +40,8 @@ app.use(function(req, res, next) {
 var router = express.Router();
 
 router.get('/instagram-recents', function(req, res) {
-    var username = req.username;
+    console.log(req.query);
+    var username = req.query.username;
     request("http://instagram.com/" + username + "/media", function(error, response, body) {
         res.json(JSON.parse(body));
     });
