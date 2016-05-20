@@ -9,11 +9,15 @@ export class InstagramService {
 
     }
 
-    getMostRecent () {
+    getMostRecent (username:string) {
         let url = `http://municipality.herokuapp.com/api/instagram-recents`;
         var headers = new Headers();
+        var search = new URLSearchParams();
+        search.append('username', username);
         //let url = `http://localhost:3000/api/instagram-recents`;
-        return this.http.get(url)
+        return this.http.get(url, {
+                    search : search
+                })
                .map((response) => {
                    if(response.status === 200) {
                        return response.json();

@@ -1,23 +1,52 @@
 body {
     margin: 0;
-    background-color: #3498db;
+    /*background-color: #3498db;*/
 }
 
 p {
     font-family: "Tahoma", Geneva, sans-serif;
+    color: #3498db;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
 }
 
-app {
+.left-side {
+    position: fixed;
+    left: 0;
+    width: 20%;
+    height: 100%;
+}
+
+.right-side {
+    position: fixed;
+    right: 0;
+    width: 20%;
+    height: 100%;
+}
+
+wall {
     position: absolute;
     margin: auto;
-    left:0;
+    left: 0;
     right: 0;
-    width: 80%;
+    background-color: white;
+    width: 60%;
     height: 100%;
+    min-width : 800px;
+}
+
+.wall-container {
+    padding: 0 5px 0 5px;
+}
+
+.section-header {
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
 }
 
 /*Instagram component*/
 .ig-container {
+    position: relative;
     width : 100%;
     height: 150px;
 }
@@ -41,12 +70,36 @@ app {
     position: absolute;
     width: 100%;
     height: inherit;
+    display: flex;
 }
 
 .ig-image {
-    display: inline-block;
-    margin: 0px 10px 0px 10px;
+    position: relative;
+    flex: 1;
+    /*margin: 0px 10px 0px 10px;*/
 }
+
+.ig-image img {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgray;
+}
+
+.ig-last-recent {
+    opacity: .2;
+}
+
+.ig-see-more {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*end Instagram css*/
 
 /*loading mask*/
 .loader {

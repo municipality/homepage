@@ -13,11 +13,15 @@ import {InstagramService} from './instagram.service';
                 </div>
             </div>
             <div class="ig-image-container">
-                <div class="ig-image" *ngFor="#image of images">
-                    <img (load)="loaded()" src={{image.url}}>
+                <div class="ig-image" *ngFor="#image of images; #last = last">
+                    <img *ngIf="!last" (load)="loaded()" src={{image.url}}>
+                    <a *ngIf="last" href="http://instagram.com/{{username}}" target="_blank">
+                        <img class="ig-last-recent" (load)="loaded()" src={{image.url}}>
+                        <p class="ig-see-more">See more..</p>
+                    </a>
                 </div>
             </div>
-            </div>
+        </div>
     `
 })
 export class Instagram implements OnInit {
@@ -27,17 +31,19 @@ export class Instagram implements OnInit {
     igItems : any[];
     loadCounter : number;
     showLoadingMask : boolean = true;
+    username : string;
 
     constructor (private instagramService : InstagramService) {
         this.images = [];
-        this.mostRecent = 3;
+        this.mostRecent = 4;
         this.igItems = [];
         this.loadCounter = 0;
         this.showLoadingMask = true;
+        this.username = "best_blee_it";
     }
 
     ngOnInit () {
-        this.instagramService.getMostRecent()
+        this.instagramService.getMostRecent(this.username)
         .subscribe((response) => {
             console.log(response);
             //Set up the most recents
