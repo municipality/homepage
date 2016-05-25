@@ -15,8 +15,8 @@ import {InstagramService} from './instagram.service';
             <div class="ig-image-container">
                 <div class="ig-image" *ngFor="#image of images; #last = last">
                     <img *ngIf="!last" (load)="loaded()" src={{image.url}}>
-                    <a *ngIf="last" href="http://instagram.com/{{username}}" target="_blank">
-                        <img class="ig-last-recent" (load)="loaded()" src={{image.url}}>
+                    <a *ngIf="last" class="ig-last-recent" href="http://instagram.com/best_blee_it" target="_blank">
+                        <img class="ig-last-recent-img" (load)="loaded()" src={{image.url}}>
                         <p class="ig-see-more">See more..</p>
                     </a>
                 </div>

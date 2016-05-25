@@ -14,7 +14,6 @@ export class InstagramService {
         var headers = new Headers();
         var search = new URLSearchParams();
         search.append('username', username);
-        //let url = `http://localhost:3000/api/instagram-recents`;
         return this.http.get(url, {
                     search : search
                 })
@@ -23,7 +22,7 @@ export class InstagramService {
                        return response.json();
                    }
                    else {
-                       throw new Error("No response from instagram");
+                       throw new Error("No response from municipality.herokuapp.com");
                    }
 
                });

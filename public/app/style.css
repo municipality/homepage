@@ -38,12 +38,9 @@ p {
 }
 
 wall {
-    min-width: 800px;
-}
-
-.wall-container {
+    display: block;
     padding: 0 5px 0 5px;
-    min-width: 800px;
+    min-width: 790px;
     margin: 0 300px 0 300px;
 }
 
@@ -52,7 +49,55 @@ wall {
     -webkit-margin-after: 1em;
 }
 
+/*headerbar*/
+headerbar {
+    display: block;
+    margin: 0 300px 0 300px;
+    min-width: 790px;
+    height: 40px;
+    position: relative;
+}
+
+.headerbar-name {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 20%;
+}
+
+.headerbar-name p {
+    font-size: 24px;
+    font-weight: bold;
+
+}
+
+.headerbar-options {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width : 80%;
+
+}
+
+.headerbar-options p {
+    display: inline-block;
+    float: right;
+    right: 0;
+    margin: 0 5px 0 5px;
+}
+
+/*projects component*/
+projects {
+    display: block;
+}
+
 /*Instagram component*/
+instagram {
+    display: block;
+}
+
 .ig-container {
     position: relative;
     width : 100%;
@@ -96,8 +141,12 @@ wall {
     border-color: lightgray;
 }
 
-.ig-last-recent {
-    opacity: .2;
+.ig-last-recent:hover {
+    opacity: .5;
+}
+
+.ig-last-recent-img {
+    opacity: .5;
 }
 
 .ig-see-more {

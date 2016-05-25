@@ -42,9 +42,12 @@ var router = express.Router();
 router.get('/instagram-recents', function(req, res) {
     console.log(req.query);
     var username = req.query.username;
-    request("http://instagram.com/" + username + "/media", function(error, response, body) {
+    request("http://instagram.com/best_blee_it/media", function(error, response, body) {
         res.json(JSON.parse(body));
     });
+    // request("http://instagram.com/" + username + "/media", function(error, response, body) {
+    //     res.json(JSON.parse(body));
+    // });
 });
 
 app.use('/api', router);
