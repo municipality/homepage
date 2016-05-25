@@ -54,12 +54,12 @@ router.get('/projects', function(req, res) {
     res.json([
             {
                 title : 'Photo Wall',
-                url : 'brians-photo-wall.herokuapp.com',
+                url : 'http://brians-photo-wall.herokuapp.com',
                 image : 'photowall.jpg'
             },
             {
                 title : 'About Me',
-                url : 'about-brian-lee.herokuapp.com',
+                url : 'http://about-brian-lee.herokuapp.com',
                 image : 'aboutme.jpg'
             }
     ]);
