@@ -1,4 +1,4 @@
-System.register(['angular2/platform/browser', 'angular2/core', 'angular2/http', './wall.component', './headerbar.component'], function(exports_1, context_1) {
+System.register(['angular2/platform/browser', 'angular2/core', 'angular2/http', './wall.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/http', 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var browser_1, core_1, http_1, wall_component_1, headerbar_component_1;
+    var browser_1, core_1, http_1, wall_component_1;
     var App;
     return {
         setters:[
@@ -25,9 +25,6 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/http', 
             },
             function (wall_component_1_1) {
                 wall_component_1 = wall_component_1_1;
-            },
-            function (headerbar_component_1_1) {
-                headerbar_component_1 = headerbar_component_1_1;
             }],
         execute: function() {
             App = (function () {
@@ -38,9 +35,9 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/http', 
                 App = __decorate([
                     core_1.Component({
                         selector: 'app',
-                        directives: [wall_component_1.Wall, headerbar_component_1.Headerbar],
+                        directives: [wall_component_1.Wall],
                         providers: [http_1.Http, http_1.HTTP_BINDINGS],
-                        template: "\n        <div class=\"background\">\n            <div class=\"left-side\"></div>\n            <div class=\"right-side\"></div>\n            <headerbar></headerbar>\n            <wall></wall>\n        </div>\n\n\n\n    "
+                        template: "\n        <div class=\"background\">\n            <div class=\"left-side\"></div>\n            <div class=\"right-side\"></div>\n            <wall></wall>\n        </div>\n\n\n\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], App);
@@ -50,4 +47,4 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/http', 
         }
     }
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm1haW4udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7WUF5QkE7Z0JBQ0k7Z0JBRUEsQ0FBQztnQkFFRCxzQkFBUSxHQUFSO2dCQUVBLENBQUM7Z0JBeEJMO29CQUFDLGdCQUFTLENBQUU7d0JBQ1IsUUFBUSxFQUFHLEtBQUs7d0JBQ2hCLFVBQVUsRUFBRyxDQUFDLHFCQUFJLEVBQUUsK0JBQVMsQ0FBQzt3QkFDOUIsU0FBUyxFQUFHLENBQUMsV0FBSSxFQUFFLG9CQUFhLENBQUM7d0JBQ2pDLFFBQVEsRUFBRyw2TkFVVjtxQkFDSixDQUFDOzt1QkFBQTtnQkFVRixVQUFDO1lBQUQsQ0FBQyxBQVJELElBUUM7WUFJRCxtQkFBUyxDQUFDLEdBQUcsQ0FBQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtib290c3RyYXB9IGZyb20gJ2FuZ3VsYXIyL3BsYXRmb3JtL2Jyb3dzZXInO1xuaW1wb3J0IHtDb21wb25lbnQsIEluamVjdGFibGUsIE9uSW5pdH0gZnJvbSAnYW5ndWxhcjIvY29yZSc7XG5pbXBvcnQge0h0dHAsIEhUVFBfQklORElOR1N9IGZyb20gJ2FuZ3VsYXIyL2h0dHAnO1xuXG5pbXBvcnQge1dhbGx9IGZyb20gJy4vd2FsbC5jb21wb25lbnQnO1xuaW1wb3J0IHtIZWFkZXJiYXJ9IGZyb20gJy4vaGVhZGVyYmFyLmNvbXBvbmVudCc7XG5cblxuQENvbXBvbmVudCAoe1xuICAgIHNlbGVjdG9yIDogJ2FwcCcsXG4gICAgZGlyZWN0aXZlcyA6IFtXYWxsLCBIZWFkZXJiYXJdLFxuICAgIHByb3ZpZGVycyA6IFtIdHRwLCBIVFRQX0JJTkRJTkdTXSxcbiAgICB0ZW1wbGF0ZSA6IGBcbiAgICAgICAgPGRpdiBjbGFzcz1cImJhY2tncm91bmRcIj5cbiAgICAgICAgICAgIDxkaXYgY2xhc3M9XCJsZWZ0LXNpZGVcIj48L2Rpdj5cbiAgICAgICAgICAgIDxkaXYgY2xhc3M9XCJyaWdodC1zaWRlXCI+PC9kaXY+XG4gICAgICAgICAgICA8aGVhZGVyYmFyPjwvaGVhZGVyYmFyPlxuICAgICAgICAgICAgPHdhbGw+PC93YWxsPlxuICAgICAgICA8L2Rpdj5cblxuXG5cbiAgICBgXG59KVxuXG5jbGFzcyBBcHAgaW1wbGVtZW50cyBPbkluaXR7XG4gICAgY29uc3RydWN0b3IgKCkge1xuXG4gICAgfVxuXG4gICAgbmdPbkluaXQgKCkge1xuXG4gICAgfVxufVxuXG5cblxuYm9vdHN0cmFwKEFwcCk7XG4iXX0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm1haW4udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7WUF3QkE7Z0JBQ0k7Z0JBRUEsQ0FBQztnQkFFRCxzQkFBUSxHQUFSO2dCQUVBLENBQUM7Z0JBdkJMO29CQUFDLGdCQUFTLENBQUU7d0JBQ1IsUUFBUSxFQUFHLEtBQUs7d0JBQ2hCLFVBQVUsRUFBRyxDQUFDLHFCQUFJLENBQUM7d0JBQ25CLFNBQVMsRUFBRyxDQUFDLFdBQUksRUFBRSxvQkFBYSxDQUFDO3dCQUNqQyxRQUFRLEVBQUcsd0xBU1Y7cUJBQ0osQ0FBQzs7dUJBQUE7Z0JBVUYsVUFBQztZQUFELENBQUMsQUFSRCxJQVFDO1lBSUQsbUJBQVMsQ0FBQyxHQUFHLENBQUMsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7Ym9vdHN0cmFwfSBmcm9tICdhbmd1bGFyMi9wbGF0Zm9ybS9icm93c2VyJztcbmltcG9ydCB7Q29tcG9uZW50LCBJbmplY3RhYmxlLCBPbkluaXR9IGZyb20gJ2FuZ3VsYXIyL2NvcmUnO1xuaW1wb3J0IHtIdHRwLCBIVFRQX0JJTkRJTkdTfSBmcm9tICdhbmd1bGFyMi9odHRwJztcblxuaW1wb3J0IHtXYWxsfSBmcm9tICcuL3dhbGwuY29tcG9uZW50JztcblxuXG5cbkBDb21wb25lbnQgKHtcbiAgICBzZWxlY3RvciA6ICdhcHAnLFxuICAgIGRpcmVjdGl2ZXMgOiBbV2FsbF0sXG4gICAgcHJvdmlkZXJzIDogW0h0dHAsIEhUVFBfQklORElOR1NdLFxuICAgIHRlbXBsYXRlIDogYFxuICAgICAgICA8ZGl2IGNsYXNzPVwiYmFja2dyb3VuZFwiPlxuICAgICAgICAgICAgPGRpdiBjbGFzcz1cImxlZnQtc2lkZVwiPjwvZGl2PlxuICAgICAgICAgICAgPGRpdiBjbGFzcz1cInJpZ2h0LXNpZGVcIj48L2Rpdj5cbiAgICAgICAgICAgIDx3YWxsPjwvd2FsbD5cbiAgICAgICAgPC9kaXY+XG5cblxuXG4gICAgYFxufSlcblxuY2xhc3MgQXBwIGltcGxlbWVudHMgT25Jbml0e1xuICAgIGNvbnN0cnVjdG9yICgpIHtcblxuICAgIH1cblxuICAgIG5nT25Jbml0ICgpIHtcblxuICAgIH1cbn1cblxuXG5cbmJvb3RzdHJhcChBcHApO1xuIl19

@@ -7,8 +7,9 @@ import {Component} from 'angular2/core';
             <p>Brian Lee</p>
         </div>
         <div class="headerbar-options">
-            <p>Recent Projects</p>
+        <!-- From bottom to top because using float: right -->
             <p>Instagram</p>
+            <p>Recent Projects</p>
         </div>
     `
 })

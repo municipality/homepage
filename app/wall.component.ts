@@ -3,12 +3,14 @@ import {Component, OnInit} from 'angular2/core';
 
 import {Instagram} from './instagram.component';
 import {Projects} from './projects.component';
+import {Headerbar} from './headerbar.component';
 
 
 @Component({
     selector : 'wall',
-    directives : [Instagram, Projects],
+    directives : [Instagram, Projects, Headerbar],
     template : `
+            <headerbar></headerbar>
             <projects></projects>
             <instagram></instagram>
     `

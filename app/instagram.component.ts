@@ -13,7 +13,7 @@ import {InstagramService} from './instagram.service';
                 </div>
             </div>
             <div class="ig-image-container">
-                <div class="ig-image" *ngFor="#image of images; #last = last">
+                <div class="ig-image hover-fade" *ngFor="#image of images; #last = last">
                     <img *ngIf="!last" (load)="loaded()" src={{image.url}}>
                     <a *ngIf="last" class="ig-last-recent" href="http://instagram.com/best_blee_it" target="_blank">
                         <img class="ig-last-recent-img" (load)="loaded()" src={{image.url}}>
