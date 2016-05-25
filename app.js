@@ -51,18 +51,18 @@ router.get('/instagram-recents', function(req, res) {
 });
 
 router.get('/projects', function(req, res) {
-    res.json({
-        projects : [
+    res.json([
             {
+                title : 'Photo Wall',
                 url : 'brians-photo-wall.herokuapp.com',
                 image : 'photowall.jpg'
             },
             {
+                title : 'About Me',
                 url : 'about-brian-lee.herokuapp.com',
                 image : 'aboutme.jpg'
             }
-        ]
-    });
+    ]);
 });
 
 app.use('/api', router);

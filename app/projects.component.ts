@@ -1,7 +1,9 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
+import {ProjectsService} from './projects.service';
 
 @Component({
     selector : 'projects',
+    providers : [ProjectsService],
     template : `
         <p class="section-header">Recent Projects</p>
         <div class="project">
@@ -11,8 +13,15 @@ import {Component} from 'angular2/core';
     `
 })
 
-export class Projects {
-    constructor () {
+export class Projects implements OnInit {
+    constructor (private projectsService:ProjectsService) {
 
+    }
+
+    ngOnInit () {
+        this.projectsService.getProjects()
+        .subscribe( (response) => {
+            console.log(response);
+        });
     }
 }
