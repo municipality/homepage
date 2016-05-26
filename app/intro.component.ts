@@ -32,7 +32,7 @@ export class Intro implements OnInit {
         this.image = image;
         var me = this;
         document.onscroll = (e) => {
-            me.image.style.bottom = -1 * window.pageYOffset * 1.5 + "px";
+            me.image.style.bottom = -1 * window.pageYOffset * 1.25 + "px";
         };
     }
 }

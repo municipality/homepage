@@ -12,8 +12,6 @@ import {Wall} from './wall.component';
     providers : [Http, HTTP_BINDINGS],
     template : `
         <div class="background">
-            <div class="left-side"></div>
-            <div class="right-side"></div>
             <wall></wall>
         </div>
 

@@ -5,7 +5,7 @@ import {ProjectsService} from './projects.service';
     selector : 'projects',
     providers : [ProjectsService],
     template : `
-        <p class="section-header">Recent Projects</p>
+        <p class="section-header">Projects</p>
         <div class="project" *ngFor="#project of projects">
             <a href={{project.url}} target="_blank">
                 <img class="project-image" src="{{project.image}}">

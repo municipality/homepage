@@ -14,7 +14,7 @@ import {Intro} from './intro.component';
             <headerbar></headerbar>
             <intro></intro>
             <projects></projects>
-            <instagram></instagram>
+            <instagram class="section"></instagram>
     `
 })
 export class Wall implements OnInit {
