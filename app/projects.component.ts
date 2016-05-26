@@ -8,7 +8,7 @@ import {ProjectsService} from './projects.service';
         <p class="section-header">Recent Projects</p>
         <div class="project" *ngFor="#project of projects">
             <a href={{project.url}} target="_blank">
-                <img class="project-image" src="images/sample.jpg">
+                <img class="project-image" src="{{project.image}}">
                 <p class="project-title">{{project.title}}</p>
             </a>
         </div>
@@ -19,7 +19,7 @@ export class Projects implements OnInit {
     projects : any[];
 
     constructor (private projectsService:ProjectsService) {
-
+        this.projects = [];
     }
 
     ngOnInit () {

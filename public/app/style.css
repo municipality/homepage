@@ -24,21 +24,23 @@ p {
     min-width: 1400px;
 }
 .left-side {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 300px;
     height: 100%;
     background-color: gray;
+    z-index: 1;
 }
 
 .right-side {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     width: 300px;
     height: 100%;
     background-color: gray;
+    z-index: 1;
 }
 
 wall {
@@ -81,7 +83,6 @@ headerbar {
     right: 0;
     bottom: 0;
     width : 80%;
-
 }
 
 .headerbar-options p {
@@ -89,11 +90,52 @@ headerbar {
     float: right;
     right: 0;
     margin: 0 5px 0 5px;
+    font-size: 12px;
 }
+
+.headerbar-options p:hover {
+    opacity: .5;
+}
+
+/*intro*/
+intro {
+    display: flex;
+    position: relative;
+    height: 400px;
+    width: 120%;
+    overflow : hidden;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+}
+
+.intro-image {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+}
+
+.intro-box {
+    flex: 1;
+    margin: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgray;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 3;
+}
+
 
 /*projects component*/
 projects {
     display: block;
+    position: relative;
+}
+
+.projects-container {
+    width: 100%;
+    height: auto;
 }
 
 .project {
@@ -175,6 +217,7 @@ instagram {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
 }
 
 /*end Instagram css*/
