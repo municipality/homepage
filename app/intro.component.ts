@@ -31,8 +31,8 @@ export class Intro implements OnInit {
         //Parallax implementation
         this.image = image;
         var me = this;
-        document.onscroll = (e) => {
+        document.addEventListener("scroll", (e) => {
             me.image.style.bottom = -1 * window.pageYOffset * 1.25 + "px";
-        };
+        });
     }
 }

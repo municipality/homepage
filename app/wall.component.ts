@@ -3,18 +3,17 @@ import {Component, OnInit} from 'angular2/core';
 
 import {Instagram} from './instagram.component';
 import {Projects} from './projects.component';
-import {Headerbar} from './headerbar.component';
+
 import {Intro} from './intro.component';
 
 
 @Component({
     selector : 'wall',
-    directives : [Instagram, Projects, Headerbar, Intro],
+    directives : [Instagram, Projects, Intro],
     template : `
-            <headerbar></headerbar>
             <intro></intro>
             <projects></projects>
-            <instagram class="section"></instagram>
+            <instagram></instagram>
     `
 })
 export class Wall implements OnInit {

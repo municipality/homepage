@@ -1,7 +1,7 @@
 body {
     margin: 0;
+    background-color: rgba(0, 0, 0, .1);
     /*background-color: #3498db;*/
-    min-width: 1400px;
 }
 
 p {
@@ -25,7 +25,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    min-width: 1400px;
+
 }
 .left-side {
     position: fixed;
@@ -47,26 +47,17 @@ p {
     z-index: 1;
 }
 
-wall {
-    display: block;
-    padding: 0 5px 0 5px;
-    min-width: 790px;
-    /*margin: 0 300px 0 300px;*/
-    margin: 0 20px 0 20px;
-}
-
-.section-header {
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
-}
-
 /*headerbar*/
 headerbar {
     display: block;
     width: 100%;
     height: 40px;
-    position: relative;
+    position: fixed;
     margin: 0 0 15px 0;
+    top: 0;
+    left: 0;
+    background-color: rgba(232, 158, 205, .5);
+    z-index: 3;
 }
 
 .headerbar-name {
@@ -75,11 +66,13 @@ headerbar {
     left: 0;
     bottom: 0;
     width: 20%;
+    margin: 0 0 5px 5px;
 }
 
 .headerbar-name p {
     font-size: 24px;
     font-weight: bold;
+    color: white;
 
 }
 
@@ -88,7 +81,8 @@ headerbar {
     position: absolute;
     right: 0;
     bottom: 0;
-    width : 80%;
+    width: 80%;
+    margin: 0 5px 5px 0;
 }
 
 .headerbar-options p {
@@ -103,16 +97,33 @@ headerbar {
     opacity: .5;
 }
 
+wall {
+    display: block;
+    padding: 40px 0 0 0;
+    min-width: 790px;
+    width: 95%;
+    /*margin: 0 300px 0 300px;*/
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.section-header {
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+}
+
 /*intro*/
 intro {
     display: flex;
     position: relative;
-    height: 400px;
+    left: 0;
+    height: 500px;
     /*width: 120%;*/
     width: 100%;
+    min-width: 830px;
     overflow : hidden;
-    left: 50%;
-    transform: translate(-50%, 0);
     z-index: 2;
 }
 
@@ -133,24 +144,57 @@ intro {
     z-index: 3;
 }
 
+/*tetris component*/
+tetris {
+    display: block;
+    position: fixed;
+    top: 40px;
+    min-width: 790px;
+    width: 95%;
+    height: 100%;
+    overflow: hidden;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.tetris-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.tetris-top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.tetris-bottom {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+}
 
 /*projects component*/
 projects {
     display: block;
     position: relative;
-    height: 900px;
+    overflow: hidden;
 }
 
 .projects-container {
     width: 100%;
     height: auto;
+    display: flex;
+
 }
 
 .project {
     position: relative;
-    width: 100%;
-    height: 150px;
-    margin: 0 0 15px 0;
+    width: 300px;
+    height: 300px;
+    margin: 0 20px 0 20px;
+    flex: 1;
 }
 
 .project-image {
