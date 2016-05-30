@@ -12,6 +12,7 @@ import {Intro} from './intro.component';
     directives : [Instagram, Projects, Intro],
     template : `
             <intro></intro>
+            <div class="blank-block"></div>
             <projects></projects>
             <instagram></instagram>
     `
