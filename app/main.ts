@@ -6,17 +6,18 @@ import {Wall} from './wall.component';
 import {Headerbar} from './headerbar.component';
 import {Tetris} from './tetris.component';
 
+import {ScrollingService} from './scrolling.service';
+
 @Component ({
     selector : 'app',
     directives : [Wall, Headerbar, Tetris],
     providers : [Http, HTTP_BINDINGS],
     template : `
         <div class="background">
-            <headerbar></headerbar>
-            <tetris></tetris>
-            <wall></wall>
-        </div>
 
+        </div>
+        <headerbar></headerbar>
+        <wall></wall>
 
 
     `
@@ -34,4 +35,4 @@ class App implements OnInit{
 
 
 
-bootstrap(App);
+bootstrap(App, [ScrollingService]);

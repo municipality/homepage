@@ -2,13 +2,18 @@ body {
     margin: 0;
     background-color: rgba(0, 0, 0, .1);
     /*background-color: #3498db;*/
+    font-family: "Tahoma", Geneva, sans-serif;
 }
 
 p {
-    font-family: "Tahoma", Geneva, sans-serif;
     color: #3498db;
     -webkit-margin-before: 0;
     -webkit-margin-after: 0;
+}
+
+h2 {
+    font-weight: 100;
+    font-size: 2.5em;
 }
 
 .hover-fade:hover {
@@ -26,9 +31,9 @@ p {
 
 
 .background {
-    position: absolute;
+    position: fixed;
     top: 0;
-    width: 100%;
+    width: 95%;
     height: 100%;
 
 }
@@ -96,6 +101,7 @@ headerbar {
     right: 0;
     margin: 0 5px 0 5px;
     font-size: 12px;
+    cursor: pointer;
 }
 
 .headerbar-options p:hover {
@@ -105,7 +111,7 @@ headerbar {
 wall {
     display: block;
     padding: 40px 0 0 0;
-    min-width: 790px;
+    min-width: 800px;
     width: 95%;
     /*margin: 0 300px 0 300px;*/
     position: absolute;
@@ -121,6 +127,10 @@ wall {
 
 /*intro*/
 intro {
+    display: block;
+}
+
+.intro-container {
     display: flex;
     position: relative;
     left: 0;
@@ -149,12 +159,75 @@ intro {
     z-index: 3;
 }
 
+.outro-container {
+    position: relative;
+    width: 100%;
+}
+
+.outro-panel {
+    width: 100%;
+    height: 550px;
+    background-color: red;
+    position: relative;
+}
+
+.outro-intro {
+    float: left;
+    width: 200px;
+    height: 100%;
+    background-color: blue;
+
+}
+
+.outro-inner-panel {
+    /*background-color: rgba(255, 255, 255, .7);*/
+}
+
+.outro-inner-panel > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.outro-inner-panel > div h2 {
+    background-color: rgba(255, 255, 255, .7);
+}
+
+.outro-inner-panel > div p {
+    background-color: rgba(255, 255, 255, .7);
+}
+
+.outro-inner-panel.left {
+    position: absolute;
+    top: 50px;
+    right: 250px;
+    bottom: 50px;
+    left: 50px;
+}
+
+.outro-inner-panel.right {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    bottom: 50px;
+    left: 250px;
+}
+
+.outro-inner-panel.center {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    bottom: 50px;
+    left: 50px;
+}
+
 /*tetris component*/
 tetris {
     display: block;
     position: fixed;
     top: 40px;
-    min-width: 790px;
+    min-width: 800px;
     width: 95%;
     height: 100%;
     overflow: hidden;
