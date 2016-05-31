@@ -4,8 +4,9 @@ import {Component} from 'angular2/core';
     selector: 'tetris',
     template: `
         <div class="tetris-container">
-        <img #t class="tetris-top" (load)="handleTop(t)" src="images/tetris-top.png">
-        <img #b class="tetris-bottom" (load)="handleBottom(b)" src="images/tetris-bottom-small.jpg">
+            <img #t class="tetris-top" (load)="handleTop(t)" src="images/tetris-top.png">
+            <img #b class="tetris-bottom" (load)="handleBottom(b)" src="images/tetris-bottom-small.jpg">
+            
         </div>
     `
 })
