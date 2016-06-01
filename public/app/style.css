@@ -48,7 +48,7 @@ h2 {
 .background {
     position: fixed;
     top: 0;
-    width: 95%;
+    width: 100%;
     height: 100%;
 
 }
@@ -127,7 +127,7 @@ wall {
     display: block;
     padding: 40px 0 0 0;
     min-width: 800px;
-    width: 95%;
+    width: 100%;
     /*margin: 0 300px 0 300px;*/
     position: absolute;
     top: 0;
@@ -143,25 +143,28 @@ wall {
 /*intro*/
 intro {
     display: block;
+    position: relative;
 }
 
 .intro-container {
     display: flex;
     position: relative;
     left: 0;
-    height: 500px;
     /*width: 120%;*/
     width: 100%;
+    min-height: 600px;
     min-width: 830px;
     overflow : hidden;
     z-index: 2;
 }
 
-.intro-image {
+.intro-image-container {
     position: absolute;
     width: 100%;
     height: auto;
-    bottom: 0;
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;
 }
 
 .intro-icon-container {
@@ -198,6 +201,7 @@ intro {
     position: absolute;
     -webkit-transition: opacity .5s linear; /* For Safari 3.1 to 6.0 */
     transition: opacity .5s linear;
+    width: 3000px;
 }
 
 .outro-image.moon {

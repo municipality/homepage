@@ -5,16 +5,18 @@ import {ScrollingService} from './scrolling.service';
     selector : 'intro',
     template : `
         <div class="intro-container">
-            <img #image (load)="imageLoaded(image)" class="intro-image" src="images/brickwall3.jpg">
+            <div #image class="intro-image-container" style="background-image: url('images/brian.jpg');">
+                <img (load)="introImageLoaded(image)" src='images/brian.jpg' style="display:none;">
+            </div>
             <div class="intro-icon-container">
-            
+
                 <img class="intro-icon" src="images/brian-icon.png">
             </div>
         </div>
         <div class="outro-container">
             <img #image2 class="outro-image" (load)="outroImageLoaded(image2, image3, moon)" src="images/outro1.jpg">
-            <img #image3 class="outro-image" src="images/outro2.jpg">
-            <img #moon class="outro-image moon" src="images/moon.png">
+            <img #image3 class="outro-image" (load)="outroImageLoaded(image2, image3, moon)" src="images/outro2.jpg">
+            <img #moon class="outro-image moon" (load)="outroImageLoaded(image2, image3, moon)" src="images/moon.png">
             <div class="outro-panel first">
                 <div class="outro-intro">
 
@@ -51,6 +53,17 @@ export class Intro implements OnInit {
     introImage;
     outroImage;
     loaded = false;
+
+    loadedCount = 0;
+    imageCount = 4;
+
+    introContainer;
+
+    introImage1;
+    outroImage1;
+    outroImage2;
+    moon;
+
     constructor (private scrollingService : ScrollingService) {
 
     }
@@ -59,41 +72,67 @@ export class Intro implements OnInit {
 
     }
 
-    imageLoaded(image) {
+    introImageLoaded(image) {
         //Parallax implementation
-
+        this.introImage1 = image;
         var me = this;
-        if(image.style.bottom == "") {
-            image.style.bottom = '0px';
+        if(image.style.top == "") {
+            image.style.top = '0px';
         }
         var intro;
-        this.introImage = image;
+        if(intro == null) {
+            intro = document.getElementsByClassName("intro-container")[0];
+            this.introContainer = intro;
+        }
+        intro.style.height = window.innerHeight + "px";
         document.addEventListener("scroll", (e) => {
-            if(intro == null) {
-                intro = document.getElementsByClassName("intro-container")[0];
-            }
             if(intro && me.scrollingService.isInViewport(intro)) {
-                image.style.bottom = -1 * window.pageYOffset * .2 + "px";
+                image.style.bottom = -1 * window.pageYOffset * .3 + "px";
             }
 
         });
+        this.loadedCount++;
+
+        if(this.loadedCount == this.imageCount) {
+            this.allLoaded();
+        }
     }
 
     outroImageLoaded(image, dreamImage, moon) {
-        if(!image || !dreamImage) return;
+        if(this.loaded) return;
+
+        this.outroImage1 = image;
+        this.outroImage2 = dreamImage;
+        this.moon = moon;
+        this.loadedCount++;
+
+        if(this.loadedCount == this.imageCount) {
+            this.allLoaded();
+        }
+    }
+
+    allLoaded () {
         if(this.loaded) return;
         this.loaded = true;
+
+        var inspireImage = this.outroImage1;
+        var dreamImage = this.outroImage2;
+        var moon = this.moon;
+
+        if(!inspireImage || !dreamImage) return;
+
 
         dreamImage.style.opacity = 0;
         var moonBottom = 0;
         moon.style.bottom = "0px";
-        var imageTop = 0, imageLeft=0;
+        var inspireImageTop = 0, inspireImageLeft=0;
         var me = this;
-        if(image.style.top == "") {
-            image.style.top = '0px';
-            image.style.left = "0px";
+        if(inspireImage.style.top == "") {
+            inspireImage.style.top = '0px';
+            inspireImage.style.left = "0px";
         }
-        var ycheck = image.y;
+        var ycheck = inspireImage.y;
+        var orgYCheck = ycheck;
         var outro;
         var inspire = document.getElementsByClassName("outro-inner-panel")[0];
         var dream = document.getElementsByClassName("outro-inner-panel")[1];
@@ -102,7 +141,17 @@ export class Intro implements OnInit {
         var focus = inspire;
         var prevOffset = 0;
         var scroll = "";
+
+        var viewportSize = window.innerHeight;
+        window.addEventListener("resize", (e) => {
+            var multiplier = window.innerHeight / viewportSize;
+            ycheck = orgYCheck * multiplier;
+            this.introContainer.style.height = viewportSize + "px";
+        });
+
         document.addEventListener("scroll", (e) => {
+
+            var rect = inspireImage.getBoundingClientRect();
             if(window.pageYOffset > prevOffset) {
                 scroll = "down";
             }
@@ -110,7 +159,6 @@ export class Intro implements OnInit {
                 scroll = "up";
             }
             prevOffset = window.pageYOffset;
-            console.log(scroll);
 
             if(outro == null) {
                 outro = document.getElementsByClassName("outro-container")[0];
@@ -118,27 +166,27 @@ export class Intro implements OnInit {
 
             if(outro && isInViewport(outro)) {
                 if(window.pageYOffset > ycheck) {
-                    image.style.top = imageTop + (window.pageYOffset - ycheck) + 'px';
-                    dreamImage.style.top = imageTop + (window.pageYOffset - ycheck) + 'px';
+                    inspireImage.style.top = inspireImageTop + (window.pageYOffset - ycheck) + 'px';
+                    dreamImage.style.top = inspireImageTop + (window.pageYOffset - ycheck) + 'px';
                 } else if(window.pageYOffset < ycheck) {
-                    image.style.top = "0px";
+                    inspireImage.style.top = "0px";
                     dreamImage.style.top = "0px";
                 }
 
-                image.style.left = imageLeft - (window.pageYOffset * .1) + 'px';
-                dreamImage.style.left = imageLeft - (window.pageYOffset * .05) + 'px';
+                inspireImage.style.left = inspireImageLeft - (window.pageYOffset * .1) + 'px';
+                dreamImage.style.left = inspireImageLeft - (window.pageYOffset * .05) + 'px';
             }
             if(scroll == "up") {
                 if(isInViewport(inspire) && focus != inspire) {
                     focus = inspire;
-                    image.style.opacity = 1;
+                    inspireImage.style.opacity = 1;
                     dreamImage.style.opacity = 0;
                 }
             }
             else {
                 if(isInViewport(dream) && focus != dream) {
                     focus = dream;
-                    image.style.opacity = 0;
+                    inspireImage.style.opacity = 0;
                     dreamImage.style.opacity = 1;
                 }
             }
