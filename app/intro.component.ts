@@ -141,12 +141,23 @@ export class Intro implements OnInit {
         var focus = inspire;
         var prevOffset = 0;
         var scroll = "";
-
         var viewportSize = window.innerHeight;
+
+        var outropanels = document.getElementsByClassName("outro-panel");
+        for(let x in outropanels) {
+            let panel:any = outropanels[x];
+            panel.style.height = viewportSize + "px";
+        }
+
+
         window.addEventListener("resize", (e) => {
             var multiplier = window.innerHeight / viewportSize;
             ycheck = orgYCheck * multiplier;
-            this.introContainer.style.height = viewportSize + "px";
+            this.introContainer.style.height = viewportSize*multiplier + "px";
+            for(let x in outropanels) {
+                let panel:any = outropanels[x];
+                panel.style.height = viewportSize*multiplier + "px";
+            }
         });
 
         document.addEventListener("scroll", (e) => {
@@ -159,7 +170,7 @@ export class Intro implements OnInit {
                 scroll = "up";
             }
             prevOffset = window.pageYOffset;
-
+            console.log(outro);
             if(outro == null) {
                 outro = document.getElementsByClassName("outro-container")[0];
             }
