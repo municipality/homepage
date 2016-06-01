@@ -17,6 +17,7 @@ import {ScrollingService} from './scrolling.service';
             </div>
         </div>
         <div class="outro-container">
+            <img #image2 class="outro-image" (load)="outroImageLoaded(image2)" src="images/outro1.jpg">
             <div class="outro-panel first">
                 <div class="outro-intro">
 
@@ -43,8 +44,8 @@ import {ScrollingService} from './scrolling.service';
 })
 
 export class Intro implements OnInit {
-    image : HTMLElement;
-
+    introImage;
+    outroImage;
     constructor (private scrollingService : ScrollingService) {
 
     }
@@ -55,14 +56,51 @@ export class Intro implements OnInit {
 
     imageLoaded(image) {
         //Parallax implementation
-        this.image = image;
+
         var me = this;
-        // document.addEventListener("scroll", (e) => {
-        //     if(me.scrollingService.isInViewport(me)) {
-        //         me.image.style.bottom = -1 * window.pageYOffset * 1.25 + "px";
-        //         console.log("scrolling");
-        //     }
-        //
-        // });
+        if(image.style.bottom == "") {
+            image.style.bottom = '0px';
+        }
+        var intro;
+        this.introImage = image;
+        document.addEventListener("scroll", (e) => {
+            if(intro == null) {
+                intro = document.getElementsByClassName("intro-container")[0];
+            }
+            if(intro && me.scrollingService.isInViewport(intro)) {
+                image.style.bottom = -1 * window.pageYOffset * .5 + "px";
+                console.log("scrolling");
+            }
+
+        });
+    }
+
+    outroImageLoaded(image) {
+        var imageTop = 0, imageLeft=0;
+        var me = this;
+        if(image.style.top == "") {
+            image.style.top = '0px';
+            image.style.left = "0px";
+        }
+        var ycheck = image.y;
+        var outro;
+        this.outroImage = image;
+        document.addEventListener("scroll", (e) => {
+            if(outro == null) {
+                outro = document.getElementsByClassName("outro-container")[0];
+            }
+
+            if(outro && me.scrollingService.isInViewport(outro)) {
+                console.log("outro scroll")
+
+                if(window.pageYOffset > ycheck) {
+                    this.outroImage.style.top = imageTop + (window.pageYOffset - ycheck) + 'px';
+                } else if(window.pageYOffset < ycheck) {
+                    this.outroImage.style.top = "0px";
+                }
+
+                this.outroImage.style.left = imageLeft - (window.pageYOffset * .4) + 'px';
+            }
+        });
     }
 }

@@ -6,14 +6,13 @@ import {Projects} from './projects.component';
 
 import {Intro} from './intro.component';
 
-import {ScrollingService} from './scrolling.service';
 
 
 @Component({
     selector : 'wall',
     directives : [Instagram, Projects, Intro],
     template : `
-            <intro id="intro"></intro>
+            <intro></intro>
             <div class="blank-block"></div>
             <projects></projects>
             <instagram></instagram>
@@ -21,7 +20,8 @@ import {ScrollingService} from './scrolling.service';
 })
 export class Wall implements OnInit {
     intro;
-    constructor (private scrollingService : ScrollingService) {
+    outro;
+    constructor () {
 
     }
     /*
@@ -29,17 +29,6 @@ export class Wall implements OnInit {
       for the first time
      */
     ngOnInit () {
-        var me = this;
-        document.addEventListener("scroll", (e) => {
-            if(this.intro == null ) {
-                this.intro = document.getElementById("intro");
-            }
-            if(this.intro && me.scrollingService.isInViewport(this.intro)) {
-                let image:any = document.getElementsByClassName("intro-image")[0];
-                image.style.bottom = -1 * window.pageYOffset * 1.25 + "px";
-                console.log("scrolling");
-            }
 
-        });
     }
 }
