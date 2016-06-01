@@ -14,13 +14,11 @@ import {ScrollingService} from './scrolling.service';
     providers : [Http, HTTP_BINDINGS],
     template : `
         <div class="background">
+        </div>
             <headerbar></headerbar>
             <wall></wall>
-        </div>
         <div id="ig-popup-container">
-            <div id="ig-popup">
-                <img id="ig-popup-image" src="images/sample.jpg">
-            </div>
+            <img id="ig-popup" src="images/sample.jpg">
         </div>
     `
 })

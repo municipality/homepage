@@ -64,16 +64,17 @@ export class Instagram implements OnInit {
         this.loadCounter++;
         if (this.loadCounter == this.mostRecent) {
             this.showLoadingMask = false;
+            document.getElementById("ig-popup-container").addEventListener("click", (e) => {
+                document.getElementById("ig-popup-container").style.display = "none";
+            })
         }
     }
 
     handleClick(image) {
         var container = document.getElementById("ig-popup-container");
-        var imageElement:any = document.getElementById("ig-popup-image");
+        var imageElement:any = document.getElementById("ig-popup");
         imageElement.src = image.src;
         container.style.display = "block";
-
-
     }
 
 }

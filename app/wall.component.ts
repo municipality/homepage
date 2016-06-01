@@ -13,7 +13,6 @@ import {Intro} from './intro.component';
     directives : [Instagram, Projects, Intro],
     template : `
             <intro></intro>
-            <div class="blank-block"></div>
             <projects class="white-bg section"></projects>
             <instagram class="blue-bg section" style="background-image: url('images/plaid.jpg');"></instagram>
     `

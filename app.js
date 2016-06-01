@@ -61,11 +61,6 @@ router.get('/projects', function(req, res) {
                 title : 'About Me',
                 url : 'http://about-brian-lee.herokuapp.com',
                 image : 'images/aboutme.jpg'
-            },
-            {
-                title : 'Example project',
-                url : 'http://google.com',
-                image: 'images/sample.jpg'
             }
     ]);
 });

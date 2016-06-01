@@ -6,12 +6,7 @@ body {
 }
 
 p {
-<<<<<<< HEAD
-    font-family: "Tahoma", Geneva, sans-serif;
-
-=======
     color: #3498db;
->>>>>>> 0b34d271b93b51fa162210c8967e2bc8c76aae9a
     -webkit-margin-before: 0;
     -webkit-margin-after: 0;
 }
@@ -34,6 +29,7 @@ p {
 
 .section {
     padding: 0 0 50px 0;
+}
 
 h2 {
     font-weight: 100;
@@ -186,11 +182,22 @@ intro {
 
 .outro-image {
     position: absolute;
+    -webkit-transition: opacity .5s linear; /* For Safari 3.1 to 6.0 */
+    transition: opacity .5s linear;
+}
+
+.outro-image.moon {
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+    width: 30%;
+    height: auto;
 }
 
 .outro-panel {
     width: 100%;
-    height: 550px;
+    /*height: 550px;*/
+    height: 700px;
     /*background-color: red;*/
     position: relative;
 }
@@ -212,9 +219,12 @@ intro {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 3;
 }
 
 .outro-inner-panel > div h2 {
+    font-weight: 100;
+    color: white;
     background-color: rgba(255, 255, 255, .7);
 }
 
@@ -302,6 +312,8 @@ projects {
 .project-image {
     width: 100%;
     height: 100%;
+    max-width: 300px;
+    max-height: auto;
 }
 
 .project-title {
@@ -350,6 +362,7 @@ instagram {
 .ig-image {
     position: relative;
     flex: 1;
+    cursor: pointer;
     /*margin: 0px 10px 0px 10px;*/
 }
 
@@ -381,21 +394,23 @@ instagram {
     top: 0;
     left: 0;
     display: none;
+    background-color: rgba(0,0,0,.7);
 }
 
 #ig-popup {
     position: absolute;
     min-width: 300px;
     min-height: 300px;
-    width: 50%;
+    width: auto;
     height: 70%;
     max-width: 700px;
     max-height: 700px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    z-index: 3;
-    background-color: black;
+    z-index: 300;
+    background-color: rgb(50,50,50);
+    border: 10px solid black;
 }
 
 #ig-popup img {
