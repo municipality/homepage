@@ -16,9 +16,11 @@ import {Tetris} from './tetris.component';
             <tetris></tetris>
             <wall></wall>
         </div>
-
-
-
+        <div id="ig-popup-container">
+            <div id="ig-popup">
+                <img id="ig-popup-image" src="images/sample.jpg">
+            </div>
+        </div>
     `
 })
 

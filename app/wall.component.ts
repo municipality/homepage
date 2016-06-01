@@ -13,8 +13,8 @@ import {Intro} from './intro.component';
     template : `
             <intro></intro>
             <div class="blank-block"></div>
-            <projects></projects>
-            <instagram></instagram>
+            <projects class="white-bg section"></projects>
+            <instagram class="blue-bg section" style="background-image: url('images/plaid.jpg');"></instagram>
     `
 })
 export class Wall implements OnInit {

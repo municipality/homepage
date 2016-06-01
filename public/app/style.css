@@ -6,9 +6,29 @@ body {
 
 p {
     font-family: "Tahoma", Geneva, sans-serif;
-    color: #3498db;
+
     -webkit-margin-before: 0;
     -webkit-margin-after: 0;
+}
+
+.white-bg {
+    background-color: white;
+}
+
+.white-bg > p {
+    color: #3498db;
+}
+
+.blue-bg {
+    background-color: #3498db;
+}
+
+.blue-bg > p {
+    color: white;
+}
+
+.section {
+    padding: 0 0 50px 0;
 }
 
 .hover-fade:hover {
@@ -19,11 +39,6 @@ p {
     width: 100%;
     height: 700px;
 }
-
-.section {
-    margin: 50px 0;
-}
-
 
 .background {
     position: absolute;
@@ -115,7 +130,7 @@ wall {
 }
 
 .section-header {
-    -webkit-margin-before: 1em;
+    -webkit-margin-before: 0em;
     -webkit-margin-after: 1em;
 }
 
@@ -185,8 +200,6 @@ projects {
     display: block;
     position: relative;
     overflow: hidden;
-    background-color: white;
-    padding: 0 0 50px 0;
 }
 
 .projects-container {
@@ -263,8 +276,8 @@ instagram {
     left: 50%;
     transform: translate(-50%, 0);
     border-style: solid;
-    border-width: 1px;
-    border-color: lightgray;
+    border-width: 5px;
+    border-color: black;
 }
 
 .ig-last-recent-img {
@@ -277,6 +290,41 @@ instagram {
     left: 50%;
     transform: translate(-50%, -50%);
     text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+}
+
+#ig-popup-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+#ig-popup {
+    position: absolute;
+    min-width: 300px;
+    min-height: 300px;
+    width: 50%;
+    height: 70%;
+    max-width: 700px;
+    max-height: 700px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    background-color: black;
+}
+
+#ig-popup img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 95%;
+    width: auto;
 }
 
 /*end Instagram css*/

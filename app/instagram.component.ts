@@ -13,8 +13,8 @@ import {InstagramService} from './instagram.service';
                 </div>
             </div>
             <div class="ig-image-container">
-                <div class="ig-image hover-fade" *ngFor="#image of images; #last = last">
-                    <img *ngIf="!last" (load)="loaded()" src={{image.url}}>
+                <div class="ig-image" *ngFor="#image of images; #last = last">
+                    <img #im *ngIf="!last" class="hover-fade" (load)="loaded()" (click)="handleClick(im)" src={{image.url}}>
                     <a *ngIf="last" class="ig-last-recent" href="http://instagram.com/best_blee_it" target="_blank">
                         <img class="ig-last-recent-img" (load)="loaded()" src={{image.url}}>
                         <p class="ig-see-more">See more..</p>
@@ -35,7 +35,7 @@ export class Instagram implements OnInit {
 
     constructor (private instagramService : InstagramService) {
         this.images = [];
-        this.mostRecent = 4;
+        this.mostRecent = 6;
         this.igItems = [];
         this.loadCounter = 0;
         this.showLoadingMask = true;
@@ -65,6 +65,15 @@ export class Instagram implements OnInit {
         if (this.loadCounter == this.mostRecent) {
             this.showLoadingMask = false;
         }
+    }
+
+    handleClick(image) {
+        var container = document.getElementById("ig-popup-container");
+        var imageElement:any = document.getElementById("ig-popup-image");
+        imageElement.src = image.src;
+        container.style.display = "block";
+
+
     }
 
 }
