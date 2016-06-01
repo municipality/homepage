@@ -5,15 +5,10 @@ import {ScrollingService} from './scrolling.service';
     selector : 'intro',
     template : `
         <div class="intro-container">
-            <img #image (load)="imageLoaded(image)" class="intro-image" src="images/image1.jpg">
-            <div class="intro-box">
-                <p class="intro-box-header">Inspire Individuality</p>
-            </div>
-            <div class="intro-box">
-                <p class="intro-box-header">Always Be Learning</p>
-            </div>
-            <div class="intro-box">
-                <p class="intro-box-header">Change the World</p>
+            <img #image (load)="imageLoaded(image)" class="intro-image" src="images/brickwall3.jpg">
+            <div class="intro-icon-container">
+            
+                <img class="intro-icon" src="images/brian-icon.png">
             </div>
         </div>
         <div class="outro-container">

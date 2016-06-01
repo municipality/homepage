@@ -37,7 +37,7 @@ h2 {
 }
 
 .hover-fade:hover {
-    opacity: .5;
+    opacity: .8;
 }
 
 .blank-block {
@@ -164,6 +164,20 @@ intro {
     bottom: 0;
 }
 
+.intro-icon-container {
+    width: 50%;
+    float: left;
+    position: relative;
+}
+.intro-icon {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .intro-box {
     flex: 1;
     margin: 20px;
@@ -192,6 +206,7 @@ intro {
     z-index: 1;
     width: 30%;
     height: auto;
+    bottom: 0;
 }
 
 .outro-panel {
@@ -240,12 +255,28 @@ intro {
     left: 50px;
 }
 
+.outro-inner-panel.left h2 {
+    text-align: left;
+}
+
+.outro-inner-panel.left p {
+    text-align: left;
+}
+
 .outro-inner-panel.right {
     position: absolute;
     top: 50px;
     right: 50px;
     bottom: 50px;
     left: 250px;
+}
+
+.outro-inner-panel.right h2 {
+    text-align: right;
+}
+
+.outro-inner-panel.right p {
+    text-align: right;
 }
 
 .outro-inner-panel.center {
@@ -256,6 +287,13 @@ intro {
     left: 50px;
 }
 
+.outro-inner-panel.center h2 p {
+    text-align: center;
+}
+
+.outro-inner-panel.center p {
+    text-align: center;
+}
 /*tetris component*/
 tetris {
     display: block;
@@ -303,8 +341,8 @@ projects {
 
 .project {
     position: relative;
-    width: 300px;
-    height: 300px;
+    max-width: 300px;
+    max-height: 300px;
     margin: 0 20px 0 20px;
     flex: 1;
 }
@@ -312,8 +350,7 @@ projects {
 .project-image {
     width: 100%;
     height: 100%;
-    max-width: 300px;
-    max-height: auto;
+
 }
 
 .project-title {
