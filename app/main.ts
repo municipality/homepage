@@ -6,6 +6,8 @@ import {Wall} from './wall.component';
 import {Headerbar} from './headerbar.component';
 import {Tetris} from './tetris.component';
 
+import {ScrollingService} from './scrolling.service';
+
 @Component ({
     selector : 'app',
     directives : [Wall, Headerbar, Tetris],
@@ -13,7 +15,6 @@ import {Tetris} from './tetris.component';
     template : `
         <div class="background">
             <headerbar></headerbar>
-            <tetris></tetris>
             <wall></wall>
         </div>
         <div id="ig-popup-container">
@@ -36,4 +37,4 @@ class App implements OnInit{
 
 
 
-bootstrap(App);
+bootstrap(App, [ScrollingService]);

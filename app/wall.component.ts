@@ -7,6 +7,7 @@ import {Projects} from './projects.component';
 import {Intro} from './intro.component';
 
 
+
 @Component({
     selector : 'wall',
     directives : [Instagram, Projects, Intro],
@@ -18,8 +19,10 @@ import {Intro} from './intro.component';
     `
 })
 export class Wall implements OnInit {
-
+    intro;
+    outro;
     constructor () {
+
     }
     /*
       Called right after the directive's data-bound properties have been checked
