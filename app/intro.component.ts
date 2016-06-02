@@ -4,10 +4,9 @@ import {ScrollingService} from './scrolling.service';
 @Component({
     selector : 'intro',
     template : `
-        <div class="intro-container">
-            <div #image class="intro-image-container" style="background-image: url('images/brian.jpg');">
-                <img (load)="introImageLoaded(image)" src='images/brian.jpg' style="display:none;">
-            </div>
+        <div #image class="intro-container intro-image-container" style="background-image: url('images/brian.jpg');">
+            <img (load)="introImageLoaded(image)" src='images/brian.jpg' style="display:none;">
+
             <div class="intro-icon-container">
 
                 <img class="intro-icon" src="images/brian-icon.png">
@@ -144,8 +143,8 @@ export class Intro implements OnInit {
         var viewportSize = window.innerHeight;
 
         var outropanels = document.getElementsByClassName("outro-panel");
-        for(let x in outropanels) {
-            let panel:any = outropanels[x];
+        for (let i = 0; i < outropanels.length; i++) {
+            let panel:any = outropanels[i];
             panel.style.height = viewportSize + "px";
         }
 
@@ -154,8 +153,8 @@ export class Intro implements OnInit {
             var multiplier = window.innerHeight / viewportSize;
             ycheck = orgYCheck * multiplier;
             this.introContainer.style.height = viewportSize*multiplier + "px";
-            for(let x in outropanels) {
-                let panel:any = outropanels[x];
+            for (let i = 0; i < outropanels.length; i++) {
+                let panel:any = outropanels[i];
                 panel.style.height = viewportSize*multiplier + "px";
             }
         });
@@ -170,7 +169,6 @@ export class Intro implements OnInit {
                 scroll = "up";
             }
             prevOffset = window.pageYOffset;
-            console.log(outro);
             if(outro == null) {
                 outro = document.getElementsByClassName("outro-container")[0];
             }
