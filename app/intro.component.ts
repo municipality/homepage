@@ -75,10 +75,6 @@ export class Intro implements OnInit {
     introImageLoaded(image) {
         //Get rid of app loading mask
         document.getElementById("app-loading-mask").style.display = "none";
-
-
-
-
         //Parallax implementation
         this.introImage1 = image;
         var me = this;
@@ -170,7 +166,7 @@ export class Intro implements OnInit {
 
         document.addEventListener("scroll", (e) => {
 
-            var rect = inspireImage.getBoundingClientRect();
+            //var rect = inspireImage.getBoundingClientRect();
             if(window.pageYOffset > prevOffset) {
                 scroll = "down";
             }
@@ -183,10 +179,22 @@ export class Intro implements OnInit {
             }
 
             if(outro && isInViewport(outro)) {
-                if(window.pageYOffset > ycheck) {
+                if(outro.getBoundingClientRect().bottom < window.innerHeight) {
+                    inspireImage.style.position = "absolute";
+                    dreamImage.style.position = "absolute";
                     inspireImage.style.top = inspireImageTop + (window.pageYOffset - ycheck) + 'px';
                     dreamImage.style.top = inspireImageTop + (window.pageYOffset - ycheck) + 'px';
+                }
+                else if(window.pageYOffset > ycheck) {
+                    // inspireImage.style.top = inspireImageTop + (window.pageYOffset - ycheck) + 'px';
+                    // dreamImage.style.top = inspireImageTop + (window.pageYOffset - ycheck) + 'px';
+                    inspireImage.style.position = "fixed";
+                    dreamImage.style.position = "fixed";
+                    inspireImage.style.top = "0px";
+                    dreamImage.style.top = "0px";
                 } else if(window.pageYOffset < ycheck) {
+                    inspireImage.style.position = "absolute";
+                    dreamImage.style.position = "absolute";
                     inspireImage.style.top = "0px";
                     dreamImage.style.top = "0px";
                 }
@@ -216,6 +224,9 @@ export class Intro implements OnInit {
 
 
         });
+
+
+
     }
 
 }
