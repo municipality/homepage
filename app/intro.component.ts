@@ -4,9 +4,10 @@ import {ScrollingService} from './scrolling.service';
 @Component({
     selector : 'intro',
     template : `
-        <div #image class="intro-container intro-image-container" style="background-image: url('images/brian.jpg');">
-            <img (load)="introImageLoaded(image)" src='images/brian.jpg' style="display:none;">
-
+        <div class="intro-container">
+            <div #image class="intro-image-container" style="background-image: url('images/brian.jpg');">
+                <img (load)="introImageLoaded(image)" src='images/brian.jpg' style="display:none;">
+            </div>
             <div class="intro-icon-container">
 
                 <img class="intro-icon" src="images/brian-icon.png">
@@ -72,6 +73,12 @@ export class Intro implements OnInit {
     }
 
     introImageLoaded(image) {
+        //Get rid of app loading mask
+        document.getElementById("app-loading-mask").style.display = "none";
+
+
+
+
         //Parallax implementation
         this.introImage1 = image;
         var me = this;
@@ -84,6 +91,7 @@ export class Intro implements OnInit {
             this.introContainer = intro;
         }
         intro.style.height = window.innerHeight + "px";
+        image.style.height = window.innerHeight + "px";
         document.addEventListener("scroll", (e) => {
             if(intro && me.scrollingService.isInViewport(intro)) {
                 image.style.bottom = -1 * window.pageYOffset * .3 + "px";
@@ -153,6 +161,7 @@ export class Intro implements OnInit {
             var multiplier = window.innerHeight / viewportSize;
             ycheck = orgYCheck * multiplier;
             this.introContainer.style.height = viewportSize*multiplier + "px";
+            this.introImage1.style.height = viewportSize*multiplier + "px";
             for (let i = 0; i < outropanels.length; i++) {
                 let panel:any = outropanels[i];
                 panel.style.height = viewportSize*multiplier + "px";
@@ -183,7 +192,7 @@ export class Intro implements OnInit {
                 }
 
                 inspireImage.style.left = inspireImageLeft - (window.pageYOffset * .1) + 'px';
-                dreamImage.style.left = inspireImageLeft - (window.pageYOffset * .05) + 'px';
+                dreamImage.style.left = inspireImageLeft - (window.pageYOffset * .1) + 'px';
             }
             if(scroll == "up") {
                 if(isInViewport(inspire) && focus != inspire) {
