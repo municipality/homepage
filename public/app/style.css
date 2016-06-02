@@ -3,6 +3,7 @@ body {
     background-color: rgba(0, 0, 0, .1);
     /*background-color: #3498db;*/
     font-family: "Tahoma", Geneva, sans-serif;
+    min-width: 1000px;
 }
 
 p {
@@ -15,6 +16,7 @@ p {
     position: fixed;
     width: 100%;
     height: 100%;
+    z-index: 1000;
 }
 
 .white-bg {
@@ -87,7 +89,7 @@ headerbar {
     margin: 0 0 15px 0;
     top: 0;
     left: 0;
-    background-color: rgba(232, 158, 205, .5);
+    background-color: rgba(232, 158, 205, .8);
     z-index: 3;
 }
 
@@ -121,24 +123,22 @@ headerbar {
     float: right;
     right: 0;
     margin: 0 5px 0 5px;
-    font-size: 12px;
+    font-size: 14px;
     cursor: pointer;
 }
 
 .headerbar-options p:hover {
-    opacity: .5;
+    color: white;
 }
 
 wall {
     display: block;
-    padding: 40px 0 0 0;
-    min-width: 800px;
+    /*padding: 40px 0 0 0;*/
+    min-width: 1000px;
     width: 100%;
     /*margin: 0 300px 0 300px;*/
     position: absolute;
     top: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
 }
 
 .section-header {
@@ -297,7 +297,7 @@ intro {
     left: 50px;
 }
 
-.outro-inner-panel.center h2 p {
+.outro-inner-panel.center h2 {
     text-align: center;
 }
 

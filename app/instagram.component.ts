@@ -14,9 +14,9 @@ import {InstagramService} from './instagram.service';
             </div>
             <div class="ig-image-container">
                 <div class="ig-image" *ngFor="#image of images; #last = last">
-                    <img #im *ngIf="!last" class="hover-fade" (load)="loaded()" (click)="handleClick(im)" src={{image.url}}>
+                    <img #im *ngIf="!last" class="hover-fade" (load)="loaded(im)" (click)="handleClick(image)" src={{image.thumbnail.url}}>
                     <a *ngIf="last" class="ig-last-recent" href="http://instagram.com/best_blee_it" target="_blank">
-                        <img class="ig-last-recent-img" (load)="loaded()" src={{image.url}}>
+                        <img class="ig-last-recent-img" (load)="loaded()" src={{image.thumbnail.url}}>
                         <p class="ig-see-more">See more..</p>
                     </a>
                 </div>
@@ -51,7 +51,7 @@ export class Instagram implements OnInit {
             for(let i = 0; i < this.mostRecent; i++) {
                 //low_resolution , standard_resolution , thumbnail
                 //640x640 , 320x320, 150,150
-                this.images.push(this.igItems[i].images.thumbnail);
+                this.images.push(this.igItems[i].images);
 
             }
 
@@ -60,7 +60,7 @@ export class Instagram implements OnInit {
         });
     }
 
-    loaded () {
+    loaded (image) {
         this.loadCounter++;
         if (this.loadCounter == this.mostRecent) {
             this.showLoadingMask = false;
@@ -73,7 +73,7 @@ export class Instagram implements OnInit {
     handleClick(image) {
         var container = document.getElementById("ig-popup-container");
         var imageElement:any = document.getElementById("ig-popup");
-        imageElement.src = image.src;
+        imageElement.src = image.standard_resolution.url;
         container.style.display = "block";
     }
 

@@ -82,8 +82,8 @@ export class Intro implements OnInit {
         //Parallax implementation
         this.introImage1 = image;
         var me = this;
-        if(image.style.top == "") {
-            image.style.top = '0px';
+        if(image.style.bottom == "") {
+            image.style.bottom = '0px';
         }
         var intro;
         if(intro == null) {
@@ -94,7 +94,7 @@ export class Intro implements OnInit {
         image.style.height = window.innerHeight + "px";
         document.addEventListener("scroll", (e) => {
             if(intro && me.scrollingService.isInViewport(intro)) {
-                image.style.bottom = -1 * window.pageYOffset * .3 + "px";
+                image.style.bottom = (-1 * window.pageYOffset * .3) + "px";
             }
 
         });

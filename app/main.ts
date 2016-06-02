@@ -13,10 +13,8 @@ import {ScrollingService} from './scrolling.service';
     directives : [Wall, Headerbar, Tetris],
     providers : [Http, HTTP_BINDINGS],
     template : `
-        <div class="background">
-        </div>
-            <headerbar></headerbar>
-            <wall></wall>
+        <headerbar></headerbar>
+        <wall></wall>
         <div id="ig-popup-container">
             <img id="ig-popup" src="images/sample.jpg">
         </div>
