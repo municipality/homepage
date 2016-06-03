@@ -152,17 +152,9 @@ export class Intro implements OnInit {
             panel.style.height = viewportSize + "px";
         }
 
-
-        // window.addEventListener("resize", (e) => {
-        //     var multiplier = window.innerHeight / viewportSize;
-        //     ycheck = orgYCheck * multiplier;
-        //     this.introContainer.style.height = viewportSize*multiplier + "px";
-        //     this.introImage1.style.height = viewportSize*multiplier + "px";
-        //     for (let i = 0; i < outropanels.length; i++) {
-        //         let panel:any = outropanels[i];
-        //         panel.style.height = viewportSize*multiplier + "px";
-        //     }
-        // });
+        if(outro == null) {
+            outro = document.getElementsByClassName("outro-container")[0];
+        }
 
         document.addEventListener("scroll", (e) => {
 
@@ -174,9 +166,7 @@ export class Intro implements OnInit {
                 scroll = "up";
             }
             prevOffset = window.pageYOffset;
-            if(outro == null) {
-                outro = document.getElementsByClassName("outro-container")[0];
-            }
+
 
             if(outro && isInViewport(outro)) {
                 if(outro.getBoundingClientRect().bottom < window.innerHeight) {

@@ -14,7 +14,7 @@ import {Engineer} from './engineer.component';
     directives : [Instagram, Projects, Intro, Engineer],
     template : `
             <intro id="intro"></intro>
-            <engineer></engineer>
+            <engineer class="sticky-scroll"></engineer>
             <projects id="projects" class="white-bg section"></projects>
             <instagram id="instagram" class="blue-bg section" style="background-image: url('images/plaid.jpg');"></instagram>
     `
@@ -34,6 +34,8 @@ export class Wall implements OnInit {
         window.addEventListener("resize", (e) => {
             this.resizeElements();
         });
+
+
     }
 
     resizeElements () {

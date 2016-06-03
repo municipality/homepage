@@ -36,9 +36,6 @@ export class Engineer implements OnInit {
         this.panels = document.getElementsByClassName("engineer-panel");
         this.innerContainer = document.getElementsByClassName("engineer-inner-container")[0];
         this.innerContainer.style.width = window.innerWidth * this.panels.length + "px";
-        for(let i = 0; i < this.panels.length; i++) {
-            this.panels[i].style.width = window.innerWidth - 2 + "px";
-        }
         window.addEventListener("resize", (e) => {
             this.innerContainer.style.width = window.innerWidth * this.panels.length + "px";
         });

@@ -166,8 +166,9 @@ intro {
 
 .intro-image-container {
     position: absolute;
+
     width: 100%;
-    height: auto;
+    min-height: 600px;
     background-size:     cover;                      /* <------ */
     background-repeat:   no-repeat;
     background-position: center center;
@@ -314,6 +315,8 @@ engineer {
 .engineer-container {
     position: relative;
     overflow: hidden;
+    min-width: 1000px;
+    min-height: 600px;
 }
 
 .engineer-inner-container {
@@ -325,6 +328,8 @@ engineer {
 
 .engineer-panel {
     flex: 1;
+    min-width: 1000px;
+    min-height: 600px;
 }
 
 .engineer-panel.intro {
