@@ -4,7 +4,7 @@ import {ScrollingService} from './scrolling.service';
 @Component({
     selector : 'intro',
     template : `
-        <div class="intro-container">
+        <div class="intro-container viewport-size">
             <div #image class="intro-image-container" style="background-image: url('images/brian.jpg');">
                 <img (load)="introImageLoaded(image)" src='images/brian.jpg' style="display:none;">
             </div>
@@ -17,7 +17,7 @@ import {ScrollingService} from './scrolling.service';
             <img #image2 class="outro-image" (load)="outroImageLoaded(image2, image3, moon)" src="images/outro1.jpg">
             <img #image3 class="outro-image" (load)="outroImageLoaded(image2, image3, moon)" src="images/outro2.jpg">
             <img #moon class="outro-image moon" (load)="outroImageLoaded(image2, image3, moon)" src="images/moon.png">
-            <div class="outro-panel first">
+            <div class="outro-panel first viewport-size">
                 <div class="outro-intro">
 
                 </div>
@@ -29,7 +29,7 @@ import {ScrollingService} from './scrolling.service';
                     </div>
                 </div>
             </div>
-            <div class="outro-panel">
+            <div class="outro-panel viewport-size">
                 <div class="outro-inner-panel left">
                     <div>
                         <h2>Dream Big</h2>
@@ -37,7 +37,7 @@ import {ScrollingService} from './scrolling.service';
                     </div>
                 </div>
             </div>
-            <div class="outro-panel">
+            <div class="outro-panel viewport-size">
                 <div class="outro-inner-panel center">
                     <div>
                         <h2>Change the World</h2>
@@ -153,16 +153,16 @@ export class Intro implements OnInit {
         }
 
 
-        window.addEventListener("resize", (e) => {
-            var multiplier = window.innerHeight / viewportSize;
-            ycheck = orgYCheck * multiplier;
-            this.introContainer.style.height = viewportSize*multiplier + "px";
-            this.introImage1.style.height = viewportSize*multiplier + "px";
-            for (let i = 0; i < outropanels.length; i++) {
-                let panel:any = outropanels[i];
-                panel.style.height = viewportSize*multiplier + "px";
-            }
-        });
+        // window.addEventListener("resize", (e) => {
+        //     var multiplier = window.innerHeight / viewportSize;
+        //     ycheck = orgYCheck * multiplier;
+        //     this.introContainer.style.height = viewportSize*multiplier + "px";
+        //     this.introImage1.style.height = viewportSize*multiplier + "px";
+        //     for (let i = 0; i < outropanels.length; i++) {
+        //         let panel:any = outropanels[i];
+        //         panel.style.height = viewportSize*multiplier + "px";
+        //     }
+        // });
 
         document.addEventListener("scroll", (e) => {
 
