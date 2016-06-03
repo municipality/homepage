@@ -75,6 +75,7 @@ export class Instagram implements OnInit {
         var imageElement:any = document.getElementById("ig-popup");
         imageElement.src = image.standard_resolution.url;
         container.style.display = "block";
+
     }
 
 }

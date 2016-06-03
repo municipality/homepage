@@ -166,8 +166,9 @@ intro {
 
 .intro-image-container {
     position: absolute;
+
     width: 100%;
-    height: auto;
+    min-height: 600px;
     background-size:     cover;                      /* <------ */
     background-repeat:   no-repeat;
     background-position: center center;
@@ -304,6 +305,54 @@ intro {
 .outro-inner-panel.center p {
     text-align: center;
 }
+
+/*engineer css */
+
+engineer {
+    position: relative;
+    display: block;
+}
+.engineer-container {
+    position: relative;
+    overflow: hidden;
+    min-width: 1000px;
+    min-height: 600px;
+}
+
+.engineer-inner-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+}
+
+.engineer-panel {
+    flex: 1;
+    min-width: 1000px;
+    min-height: 600px;
+}
+
+.engineer-panel.intro {
+    display: flex;
+}
+
+.engineer-panel.intro > div {
+    position: relative;
+    flex: 1;
+}
+
+.engineer-panel.intro > .left > .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.engineer-panel.outro {
+    background-color:black;
+}
+
+
 /*tetris component*/
 tetris {
     display: block;
@@ -442,6 +491,7 @@ instagram {
     left: 0;
     display: none;
     background-color: rgba(0,0,0,.7);
+    z-index: 300;
 }
 
 #ig-popup {
@@ -455,21 +505,10 @@ instagram {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    z-index: 300;
     background-color: rgb(50,50,50);
     border: 10px solid black;
 }
 
-#ig-popup img {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    height: 95%;
-    width: auto;
-}
 
 /*end Instagram css*/
 
