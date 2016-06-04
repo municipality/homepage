@@ -311,6 +311,11 @@ brian {
     position: relative;
 }
 
+brian .panel-size {
+    min-width: 1000px;
+    min-height: 600px;
+}
+
 .brian-name-tag {
     position: absolute;
     left: 0;
@@ -319,13 +324,15 @@ brian {
 
 .brian-name-tag-text {
     position: absolute;
-    top: 50%;
-    left: 25%;
+    top: 250px;
+    left: 300px;
     transform: translate(0, -100%)
 }
 
-.brian-title {
-
+brian .title {
+    position: absolute;
+    left: 300px;
+    top: 300px;
 }
 
 /*engineer css */
@@ -333,40 +340,33 @@ brian {
 engineer {
     position: relative;
     display: block;
+    background-color: rgba(255, 0, 0,.4);
 }
-.engineer-container {
+brian .container {
     position: relative;
     overflow: hidden;
-    min-width: 1000px;
-    min-height: 600px;
 }
 
-.engineer-inner-container {
+brian .inner-container {
     position: absolute;
     top: 0;
     left: 0;
     display: flex;
 }
 
-.engineer-panel {
+brian .panel {
     flex: 1;
     min-width: 1000px;
     min-height: 600px;
+    position: relative;
 }
 
-.engineer-panel > .title {
-    position: absolute;
-    top: 50%;
-    left: 25%;
-    transform: translate(0, 100%)
-}
-
-.engineer-panel.intro {
+brian .intro {
+    position: relative;
     display: flex;
 }
 
-.engineer-panel.intro.flex {
-    position: relative;
+brian .intro .flex {
     flex: 1;
 }
 

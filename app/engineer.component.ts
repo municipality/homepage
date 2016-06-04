@@ -6,10 +6,10 @@ import {Component, OnInit} from 'angular2/core';
 @Component ({
     selector : 'engineer',
     template : `
-        <div class="engineer-container viewport-size">
-            <div class="engineer-inner-container">
-                <div class="engineer-panel intro viewport-size">
-                    <div class="brian-title">
+        <div class="container engineer-container panel-size">
+            <div class="inner-container engineer-inner-container">
+                <div class="panel engineer-panel intro panel-size">
+                    <div class="title">
                         <p>Software Engineer</p>
                     </div>
                     <div class="flex left">
@@ -19,7 +19,7 @@ import {Component, OnInit} from 'angular2/core';
 
                     </div>
                 </div>
-                <div class="engineer-panel outro viewport-size">
+                <div class="panel outro panel-size">
 
                 </div>
             </div>

@@ -8,7 +8,7 @@ import {ScrollingService} from './scrolling.service';
     selector : 'brian',
     directives : [Engineer, Photographer],
     template : `
-        <div class="brian-name-tag viewport-size">
+        <div class="brian-name-tag panel-size">
             <h2 class="brian-name-tag-text">Brian</h2>
         </div>
         <engineer></engineer>
@@ -34,12 +34,19 @@ export class Brian implements OnInit {
     onScroll (e) {
         var isInViewport = this.scrollingService.isInViewport;
         var rect = this.brianContainer.getBoundingClientRect();
-        if (rect.top < 0 && rect.bottom > window.innerHeight) {
+        var nameTagRect = this.nameTag.getBoundingClientRect();
+        //600 is the size of brian panels
+        console.log(rect.bottom);
+
+        if (rect.top < 0 && rect.bottom > 600) {
             this.nameTag.style.position = "fixed";
+            this.nameTag.style.bottom = "";
+            this.nameTag.style.top = "0px";
         }
         else {
             this.nameTag.style.position = "absolute";
-            if(rect.bottom < window.innerHeight) {
+
+            if(rect.bottom <= 600) {
                 this.nameTag.style.bottom = "0px";
                 this.nameTag.style.top = "";
             }

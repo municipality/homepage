@@ -3,14 +3,14 @@ import {Component, OnInit} from 'angular2/core';
 @Component ({
     selector : 'photographer',
     template : `
-        <div class="photographer-container viewport-size">
-            <div class="photographer-inner-container">
-                <div class="photographer-panel intro viewport-size">
-                    <div class="brian-title">
+        <div class="container panel-size">
+            <div class="inner-container">
+                <div class="panel intro panel-size">
+                    <div class="title">
                         <p>Photographer</p>
                     </div>
                 </div>
-                <div class="photographer-panel outro viewport-size">
+                <div class="panel outro panel-size">
 
                 </div>
             </div>
