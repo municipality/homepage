@@ -5,16 +5,16 @@ import {Instagram} from './instagram.component';
 import {Projects} from './projects.component';
 
 import {Intro} from './intro.component';
-import {Engineer} from './engineer.component';
+import {Brian} from './brian.component';
 
 
 
 @Component({
     selector : 'wall',
-    directives : [Instagram, Projects, Intro, Engineer],
+    directives : [Instagram, Projects, Intro, Brian],
     template : `
             <intro id="intro"></intro>
-            <engineer class="sticky-scroll"></engineer>
+            <brian></brian>
             <projects id="projects" class="white-bg section"></projects>
             <instagram id="instagram" class="blue-bg section" style="background-image: url('images/plaid.jpg');"></instagram>
     `

@@ -4,7 +4,7 @@ import {ScrollingService} from './scrolling.service';
 @Component({
     selector : 'intro',
     template : `
-        <div class="intro-container viewport-size">
+        <div class="intro-container">
             <div #image class="intro-image-container" style="background-image: url('images/brian.jpg');">
                 <img (load)="introImageLoaded(image)" src='images/brian.jpg' style="display:none;">
             </div>
@@ -17,7 +17,7 @@ import {ScrollingService} from './scrolling.service';
             <img #image2 class="outro-image" (load)="outroImageLoaded(image2, image3, moon)" src="images/outro1.jpg">
             <img #image3 class="outro-image" (load)="outroImageLoaded(image2, image3, moon)" src="images/outro2.jpg">
             <img #moon class="outro-image moon" (load)="outroImageLoaded(image2, image3, moon)" src="images/moon.png">
-            <div class="outro-panel first viewport-size">
+            <div class="outro-panel first">
                 <div class="outro-intro">
 
                 </div>
@@ -29,7 +29,7 @@ import {ScrollingService} from './scrolling.service';
                     </div>
                 </div>
             </div>
-            <div class="outro-panel viewport-size">
+            <div class="outro-panel">
                 <div class="outro-inner-panel left">
                     <div>
                         <h2>Dream Big</h2>
@@ -37,7 +37,7 @@ import {ScrollingService} from './scrolling.service';
                     </div>
                 </div>
             </div>
-            <div class="outro-panel viewport-size">
+            <div class="outro-panel">
                 <div class="outro-inner-panel center">
                     <div>
                         <h2>Change the World</h2>
@@ -90,7 +90,7 @@ export class Intro implements OnInit {
         image.style.height = window.innerHeight + "px";
         document.addEventListener("scroll", (e) => {
             if(intro && me.scrollingService.isInViewport(intro)) {
-                image.style.bottom = (-1 * window.pageYOffset * .3) + "px";
+                image.style.bottom = (-1 * Math.floor(window.pageYOffset * .3)) + "px";
             }
 
         });
@@ -152,9 +152,17 @@ export class Intro implements OnInit {
             panel.style.height = viewportSize + "px";
         }
 
-        if(outro == null) {
-            outro = document.getElementsByClassName("outro-container")[0];
-        }
+
+        window.addEventListener("resize", (e) => {
+            var multiplier = window.innerHeight / viewportSize;
+            ycheck = orgYCheck * multiplier;
+            this.introContainer.style.height = viewportSize*multiplier + "px";
+            this.introImage1.style.height = viewportSize*multiplier + "px";
+            for (let i = 0; i < outropanels.length; i++) {
+                let panel:any = outropanels[i];
+                panel.style.height = viewportSize*multiplier + "px";
+            }
+        });
 
         document.addEventListener("scroll", (e) => {
 
@@ -166,27 +174,31 @@ export class Intro implements OnInit {
                 scroll = "up";
             }
             prevOffset = window.pageYOffset;
+            if(outro == null) {
+                outro = document.getElementsByClassName("outro-container")[0];
+            }
 
-
-            if(outro && isInViewport(outro)) {
-                if(outro.getBoundingClientRect().bottom < window.innerHeight) {
-                    inspireImage.style.position = "absolute";
-                    dreamImage.style.position = "absolute";
-                    inspireImage.style.top = inspireImageTop + (window.pageYOffset - ycheck) + 'px';
-                    dreamImage.style.top = inspireImageTop + (window.pageYOffset - ycheck) + 'px';
-                }
-                else if(window.pageYOffset > ycheck) {
-                    // inspireImage.style.top = inspireImageTop + (window.pageYOffset - ycheck) + 'px';
-                    // dreamImage.style.top = inspireImageTop + (window.pageYOffset - ycheck) + 'px';
-                    inspireImage.style.position = "fixed";
-                    dreamImage.style.position = "fixed";
-                    inspireImage.style.top = "0px";
-                    dreamImage.style.top = "0px";
-                } else if(window.pageYOffset < ycheck) {
-                    inspireImage.style.position = "absolute";
-                    dreamImage.style.position = "absolute";
-                    inspireImage.style.top = "0px";
-                    dreamImage.style.top = "0px";
+            if(outro) {
+                if(isInViewport(outro)) {
+                    if(outro.getBoundingClientRect().bottom < window.innerHeight) {
+                        inspireImage.style.position = "absolute";
+                        dreamImage.style.position = "absolute";
+                        inspireImage.style.top = inspireImageTop + (window.pageYOffset - ycheck) + 'px';
+                        dreamImage.style.top = inspireImageTop + (window.pageYOffset - ycheck) + 'px';
+                    }
+                    else if(window.pageYOffset > ycheck) {
+                        // inspireImage.style.top = inspireImageTop + (window.pageYOffset - ycheck) + 'px';
+                        // dreamImage.style.top = inspireImageTop + (window.pageYOffset - ycheck) + 'px';
+                        inspireImage.style.position = "fixed";
+                        dreamImage.style.position = "fixed";
+                        inspireImage.style.top = "0px";
+                        dreamImage.style.top = "0px";
+                    } else if(window.pageYOffset < ycheck) {
+                        inspireImage.style.position = "absolute";
+                        dreamImage.style.position = "absolute";
+                        inspireImage.style.top = "0px";
+                        dreamImage.style.top = "0px";
+                    }
                 }
 
                 inspireImage.style.left = inspireImageLeft - (window.pageYOffset * .1) + 'px';

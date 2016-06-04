@@ -306,6 +306,28 @@ intro {
     text-align: center;
 }
 
+brian {
+    display: block;
+    position: relative;
+}
+
+.brian-name-tag {
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+.brian-name-tag-text {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(0, -100%)
+}
+
+.brian-title {
+
+}
+
 /*engineer css */
 
 engineer {
@@ -332,26 +354,32 @@ engineer {
     min-height: 600px;
 }
 
+.engineer-panel > .title {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(0, 100%)
+}
+
 .engineer-panel.intro {
     display: flex;
 }
 
-.engineer-panel.intro > div {
+.engineer-panel.intro.flex {
     position: relative;
     flex: 1;
 }
 
-.engineer-panel.intro > .left > .title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
 .engineer-panel.outro {
     background-color:black;
 }
 
+
+photographer {
+    display : block;
+
+}
 
 /*tetris component*/
 tetris {

@@ -9,13 +9,13 @@ import {Component, OnInit} from 'angular2/core';
         <div class="engineer-container viewport-size">
             <div class="engineer-inner-container">
                 <div class="engineer-panel intro viewport-size">
-                    <div class="left">
-                        <div class="title">
-                            <h2>Brian</h2>
-                            <p>Software Engineer</p>
-                        </div>
+                    <div class="brian-title">
+                        <p>Software Engineer</p>
                     </div>
-                    <div class="right">
+                    <div class="flex left">
+
+                    </div>
+                    <div class="flex right">
 
                     </div>
                 </div>
@@ -41,6 +41,11 @@ export class Engineer implements OnInit {
         window.addEventListener("resize", (e) => {
             this.innerContainer.style.width = window.innerWidth * this.panels.length + "px";
         });
+
+        document.addEventListener("scroll", this.onScroll);
     }
+
+    onScroll (event) {
+
+    };
 }
->>>>>>> b3000e21f44fe0a5ef5ec8f222ffe367e5f1dd35
