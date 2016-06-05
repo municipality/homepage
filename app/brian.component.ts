@@ -32,6 +32,7 @@ export class Brian implements OnInit {
         this.brianContainer = document.getElementsByTagName("brian")[0];
         this.nameTag = document.getElementsByClassName("brian-name-tag")[0];
         document.addEventListener("scroll", this.onScroll.bind(this));
+        window.addEventListener("resize", this.onScroll.bind(this));
     }
 
     onScroll (e) {
