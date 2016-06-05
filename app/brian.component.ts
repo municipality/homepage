@@ -3,10 +3,13 @@ import {Component, OnInit} from 'angular2/core';
 import {Engineer} from './engineer.component';
 import {Photographer} from './photographer.component';
 import {ScrollingService} from './scrolling.service';
+import {BrianService} from './brian.service';
+
 
 @Component ({
     selector : 'brian',
     directives : [Engineer, Photographer],
+    providers : [BrianService],
     template : `
         <div class="brian-name-tag panel-size">
             <h2 class="brian-name-tag-text">Brian</h2>
@@ -36,8 +39,6 @@ export class Brian implements OnInit {
         var rect = this.brianContainer.getBoundingClientRect();
         var nameTagRect = this.nameTag.getBoundingClientRect();
         //600 is the size of brian panels
-        console.log(rect.bottom);
-
         if (rect.top < 0 && rect.bottom > 600) {
             this.nameTag.style.position = "fixed";
             this.nameTag.style.bottom = "";

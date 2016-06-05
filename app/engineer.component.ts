@@ -1,12 +1,17 @@
-
 import {Component, OnInit} from 'angular2/core';
 
-
+import {BrianService} from './brian.service';
 
 @Component ({
     selector : 'engineer',
     template : `
         <div class="container engineer-container panel-size">
+            <div *ngIf="currentPanel != 0" class="arrow arrow-left">
+                <img src="images/icons/left-arrow.png">
+            </div>
+            <div *ngIf="currentPanel != panels.length - 1" class="arrow arrow-right">
+                <img src="images/icons/right-arrow.png">
+            </div>
             <div class="inner-container engineer-inner-container">
                 <div class="panel engineer-panel intro panel-size">
                     <div class="title">
@@ -19,7 +24,7 @@ import {Component, OnInit} from 'angular2/core';
 
                     </div>
                 </div>
-                <div class="panel outro panel-size">
+                <div class="panel engineer-panel outro panel-size">
 
                 </div>
             </div>
@@ -30,16 +35,22 @@ import {Component, OnInit} from 'angular2/core';
 export class Engineer implements OnInit {
     innerContainer;
     panels;
-    constructor () {
+    currentPanel;
+    constructor (private brianService:BrianService) {
 
     }
 
     ngOnInit () {
         this.panels = document.getElementsByClassName("engineer-panel");
         this.innerContainer = document.getElementsByClassName("engineer-inner-container")[0];
-        this.innerContainer.style.width = window.innerWidth * this.panels.length + "px";
+        this.currentPanel = 0;
+
+        var panelWidth = this.innerContainer.parentElement.offsetWidth;
+
+        this.innerContainer.style.width = panelWidth * this.panels.length + "px";
+
         window.addEventListener("resize", (e) => {
-            this.innerContainer.style.width = window.innerWidth * this.panels.length + "px";
+            this.innerContainer.style.width = panelWidth * this.panels.length + "px";
         });
 
         document.addEventListener("scroll", this.onScroll);

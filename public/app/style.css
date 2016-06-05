@@ -335,16 +335,36 @@ brian .title {
     top: 300px;
 }
 
-/*engineer css */
-
-engineer {
-    position: relative;
-    display: block;
-    background-color: rgba(255, 0, 0,.4);
-}
 brian .container {
     position: relative;
     overflow: hidden;
+}
+
+brian .container > .arrow {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+
+    margin: auto;
+    width: 50px;
+}
+
+
+brian .container > .arrow-left {
+    left: 10px;
+}
+
+brian .container > .arrow-right {
+    right: 10px;
+}
+
+
+brian .container > .arrow img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
 }
 
 brian .inner-container {
@@ -370,6 +390,14 @@ brian .intro .flex {
     flex: 1;
 }
 
+
+/*engineer css */
+
+engineer {
+    position: relative;
+    display: block;
+    background-color: rgba(255, 0, 0,.4);
+}
 
 .engineer-panel.outro {
     background-color:black;
