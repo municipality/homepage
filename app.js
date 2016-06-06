@@ -55,12 +55,12 @@ router.get('/projects', function(req, res) {
             {
                 title : 'Photo Wall',
                 url : 'http://brians-photo-wall.herokuapp.com',
-                image : 'images/photowall.jpg'
+                image : 'images/photo-wall.png'
             },
             {
-                title : 'About Me',
+                title : 'About Brian Lee',
                 url : 'http://about-brian-lee.herokuapp.com',
-                image : 'images/aboutme.jpg'
+                image : 'images/about-brian-lee.png'
             }
     ]);
 });

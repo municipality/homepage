@@ -1,9 +1,11 @@
 import {Component, OnInit} from 'angular2/core';
 
 import {BrianService} from './brian.service';
+import {EngineerService} from './engineer.service';
 
 @Component ({
     selector : 'engineer',
+    providers: [EngineerService],
     template : `
         <div class="container engineer-container panel-size">
             <div *ngIf="currentPanel != 0" class="arrow arrow-left"
@@ -28,7 +30,14 @@ import {BrianService} from './brian.service';
                 </div>
                 <div class="panel engineer-panel projects panel-size">
                         <h2 class="header">Projects</h2>
-
+                        <div class="projects-table">
+                            <div *ngFor="#project of projects" class="projects-table-cell">
+                                <a href={{project.url}} target="_blank">
+                                    <img src="{{project.image}}">
+                                </a>
+                                <p align="center">{{project.title}}</p>
+                            </div>
+                        </div>
 
                 </div>
             </div>
@@ -40,11 +49,15 @@ export class Engineer implements OnInit {
     innerContainer;
     panels;
     currentPanel;
-    constructor (private brianService:BrianService) {
-
+    projects;
+    constructor (private brianService:BrianService, private engineerService : EngineerService) {
+        this.projects = [];
     }
 
     ngOnInit () {
+
+        this.getProjects();
+
         this.panels = document.getElementsByClassName("engineer-panel");
         this.innerContainer = document.getElementsByClassName("engineer-inner-container")[0];
         this.currentPanel = 0;
@@ -77,5 +90,20 @@ export class Engineer implements OnInit {
         if (this.currentPanel == 0) {
 
         }
+    }
+
+    getProjects () {
+        this.projects = this.engineerService.getProjects();
+        // .subscribe( (response) => {
+        //     console.log(response);
+        //     if (response != null) {
+        //         this.projects = response;
+        //     }
+        //     else {
+        //         //Handle error
+        //         alert("Cannot retrieve projects");
+        //     }
+        //
+        // });
     }
 }

@@ -422,7 +422,7 @@ engineer {
 
 .engineer-panel.projects {
     /*background-color: #D6546B;*/
-    background-color: #3498db;
+    background-color: rgba(200, 50, 50, 1);
 }
 
 
@@ -430,6 +430,26 @@ engineer {
     position: relative;
     text-align: center;
 }
+
+engineer .engineer-panel.projects .projects-table {
+    display: table;
+    position: relative;
+    height: auto;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+engineer .engineer-panel.projects .projects-table-cell {
+    display: table-cell;
+    padding: 0 20px;
+}
+
+engineer .engineer-panel.projects .projects-table-cell img {
+    max-width: 200px;
+    max-height: 200px;
+}
+
 
 photographer {
     display : block;
