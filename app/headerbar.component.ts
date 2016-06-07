@@ -8,12 +8,13 @@ import {ScrollingService} from './scrolling.service';
         <div class="headerbar-name">
             <p>Brian Lee</p>
         </div>
-        <div class="headerbar-options">
-        <!-- From bottom to top because using float: right -->
-            <p (click)="scrollTo('instagram')">Instagram</p>
-            <p (click)="scrollTo('projects')">Projects</p>
-            <p (click)="scrollTo('intro')">Intro</p>
-        </div>
+        <ul class="headerbar-options">
+            <li (click)="scrollTo('intro')">Intro</li>
+            <li (click)="scrollTo('projects')">Projects</li>
+            <li (click)="scrollTo('instagram')">Instagram</li>
+
+
+        </ul>
     `
 })
 export class Headerbar {
