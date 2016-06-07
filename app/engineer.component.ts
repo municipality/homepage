@@ -18,6 +18,7 @@ import {EngineerService} from './engineer.service';
             </div>
             <div #container class="inner-container engineer-inner-container">
                 <div class="panel engineer-panel intro panel-size">
+                    <img class="intro-image engineer-intro-image" src="images/engineer-bg.jpg">
                     <div class="title">
                         <p>Software Engineer</p>
                     </div>

@@ -12,8 +12,6 @@ import {ScrollingService} from './scrolling.service';
             <li (click)="scrollTo('intro')">Intro</li>
             <li (click)="scrollTo('projects')">Projects</li>
             <li (click)="scrollTo('instagram')">Instagram</li>
-
-
         </ul>
     `
 })
