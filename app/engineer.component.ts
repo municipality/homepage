@@ -9,11 +9,11 @@ import {EngineerService} from './engineer.service';
     template : `
         <div class="container engineer-container panel-size">
             <div *ngIf="currentPanel != 0" class="arrow arrow-left"
-                (click)="toPrevPanel(container)">
+                (click)="brianService.toPrevPanel(container)" (click)="currentPanel=currentPanel-1">
                 <img src="images/icons/left-arrow.png">
             </div>
             <div *ngIf="currentPanel != panels.length - 1" class="arrow arrow-right"
-                (click)="toNextPanel(container)">
+                (click)="brianService.toNextPanel(container)" (click)="currentPanel=currentPanel+1">
                 <img src="images/icons/right-arrow.png">
             </div>
             <div #container class="inner-container engineer-inner-container">
@@ -78,19 +78,6 @@ export class Engineer implements OnInit {
     onScroll (event) {
 
     };
-
-    toNextPanel (component) {
-        this.brianService.toNextPanel(component);
-        this.currentPanel++;
-    }
-
-    toPrevPanel (component) {
-        this.brianService.toPrevPanel(component);
-        this.currentPanel--;
-        if (this.currentPanel == 0) {
-
-        }
-    }
 
     getProjects () {
         this.projects = this.engineerService.getProjects();

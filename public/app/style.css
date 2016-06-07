@@ -12,7 +12,7 @@ p {
     -webkit-margin-after: 0;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
@@ -614,6 +614,45 @@ instagram {
 
 
 /*end Instagram css*/
+
+/*Footer css*/
+footer {
+    display: block;
+    width: 100%;
+    position: relative;
+    padding: 50px 0 100px 0;
+    background-color: rgba(0, 0, 51, 1);
+
+}
+
+footer .container {
+    display: table;
+    position: relative;
+    width: 80%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+footer > .container > .cell {
+    display: table-cell;
+    position: relative;
+    width: 20%;
+
+}
+
+footer .email::before {
+    content: url('../images/icons/email-icon.png');
+    top: 0;
+    bottom: 0;
+    margin: auto 5px;
+}
+
+footer .email {
+    color: white;
+    text-decoration: none;
+}
+
 
 /*loading mask*/
 .loader {
