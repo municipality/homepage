@@ -2,20 +2,21 @@ import {Component, OnInit} from 'angular2/core';
 
 import {Engineer} from './engineer.component';
 import {Photographer} from './photographer.component';
+import {Designer} from './designer.component';
 import {ScrollingService} from './scrolling.service';
 import {BrianService} from './brian.service';
 
 
 @Component ({
     selector : 'brian',
-    directives : [Engineer, Photographer],
+    directives : [Engineer, Photographer, Designer],
     providers : [BrianService],
     template : `
         <div class="brian-name-tag panel-size">
             <h2 class="brian-name-tag-text">Brian</h2>
         </div>
         <engineer></engineer>
-        <photographer></photographer>
+        <designer></designer>
 
 
     `

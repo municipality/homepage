@@ -16,6 +16,7 @@ import {Component} from 'angular2/core';
             </div>
             <div class="cell">
                 <h4>Follow My Ventures</h4>
+                <p>@best_blee_it</p>
             </div>
         </div>
     `

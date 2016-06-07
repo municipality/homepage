@@ -33,4 +33,31 @@ export class EngineerService {
         //
         //        });
     }
+
+    getSkillset () {
+        return [
+            //name: skill name
+            //percent: percent mastery
+            {
+                name: "Javascript",
+                percent: "80%"
+            },
+            {
+                name: "Java",
+                percent: "60%"
+            },
+            {
+                name: "C",
+                percent: "50%"
+            },
+            {
+                name: "HTML",
+                percent: "60%"
+            },
+            {
+                name: "CSS",
+                percent: "60%"
+            }
+        ];
+    }
 }

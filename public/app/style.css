@@ -406,9 +406,13 @@ brian .intro {
     display: flex;
 }
 
-brian .intro .flex {
+brian .intro > .flex {
     flex: 1;
     z-index: 0;
+}
+
+brian .intro > .left {
+    /*background-color: rgba(255, 255, 255, .4);*/
 }
 
 
@@ -426,12 +430,70 @@ engineer {
 }
 
 
-.engineer-panel.projects .header {
+.engineer-panel .header {
     position: relative;
     text-align: center;
 }
 
-engineer .engineer-panel.projects .projects-table {
+engineer .skillset-list {
+    padding: 10px 20px;
+    position: relative;
+}
+
+engineer .skillset-list > .skill {
+    position: relative;
+    height: 20px;
+    display: table;
+    padding: 5px 50px;
+}
+
+engineer .skillset-list > .skill > p {
+    float: left;
+    width: 200px;
+    display: table-cell;
+}
+
+engineer .skillset-list > .skill > .bar {
+    display: table-cell;
+    background-color: black;
+    position: relative;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+engineer .skillset-list > .skill > .bar > .inner-bar {
+    position: absolute;
+    height: 100%;
+    left:0;
+    top:0;
+    background-color:white;
+    z-index: 2;
+
+}
+
+
+
+
+designer {
+    position: relative;
+    display: block;
+    background-color: rgba(255, 0, 0,.4);
+}
+
+.designer-panel.projects {
+    /*background-color: #D6546B;*/
+    background-color: rgba(200, 50, 50, 1);
+}
+
+
+.designer-panel.projects .header {
+    position: relative;
+    text-align: center;
+}
+
+designer .designer-panel.projects .projects-table {
     display: table;
     position: relative;
     height: auto;
@@ -440,16 +502,15 @@ engineer .engineer-panel.projects .projects-table {
     margin: auto;
 }
 
-engineer .engineer-panel.projects .projects-table-cell {
+designer .designer-panel.projects .projects-table-cell {
     display: table-cell;
     padding: 0 20px;
 }
 
-engineer .engineer-panel.projects .projects-table-cell img {
+designer .designer-panel.projects .projects-table-cell img {
     max-width: 200px;
     max-height: 200px;
 }
-
 
 photographer {
     display : block;
@@ -620,7 +681,7 @@ footer {
     display: block;
     width: 100%;
     position: relative;
-    padding: 50px 0 100px 0;
+    padding: 50px 0 200px 0;
     background-color: rgba(0, 0, 51, 1);
 
 }
