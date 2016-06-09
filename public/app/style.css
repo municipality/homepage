@@ -194,12 +194,12 @@ intro {
     position: relative;
 }
 .intro-icon {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: auto;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    bottom: 0;
+    margin: auto;
 }
 
 .intro-box {
@@ -254,55 +254,62 @@ intro .outro-inner-panel {
     /*background-color: rgba(255, 255, 255, .7);*/
 }
 
-intro .outro-panel > div {
+intro .outro-inner-panel > div {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    bottom: 0;
     z-index: 3;
+    width: 15em;
+    margin: auto;
+    height: 15em;
 }
 
-intro .outro-panel.right {
-    left: 4em;
+intro .outro-inner-panel.right > div {
+    right: 15%;
 }
 
-intro .outro-panel.left {
-    right: 4em;
+intro .outro-inner-panel.left > div {
+    left: 15%;
+}
+
+intro .outro-inner-panel.center > div {
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 
-
-.outro-panel > div h2 {
+.outro-inner-panel > div h2 {
     font-weight: 100;
     color: white;
     background-color: rgba(255, 255, 255, .7);
 }
 
-.outro-panel > div p {
+.outro-inner-panel > div p {
     background-color: rgba(255, 255, 255, .7);
 }
 
-.outro-panel.left h2 {
+.outro-inner-panel.left h2 {
     text-align: left;
 }
 
-.outro-panel.left p {
+.outro-inner-panel.left p {
     text-align: left;
 }
 
-.outro-panel.right h2 {
+.outro-inner-panel.right h2 {
     text-align: right;
 }
 
-.outro-panel.right p {
+.outro-inner-panel.right p {
     text-align: right;
 }
 
-.outro-panel.center h2 {
+.outro-inner-panel.center h2 {
     text-align: center;
 }
 
-.outro-panel.center p {
+.outro-inner-panel.center p {
     text-align: center;
 }
 
@@ -702,34 +709,36 @@ instagram {
 /*Footer css*/
 footer {
     display: block;
-    width: 100%;
     position: relative;
-    padding: 5em 0 10em 0;
+    padding: 5em 1em 10em 1em;
     background-color: rgba(0, 0, 51, 1);
 
 }
 
 footer .logo {
+    position: relative;
+    margin-bottom: .5em;
+    margin-right: 1em;
+}
+
+footer .logo-image {
     position: absolute;
     top: 0;
     bottom: 0;
     margin: auto;
 }
 
+footer h4 {
+    margin: 0;
+}
+
 footer .container {
-    display: table;
     position: relative;
-    width: 80%;
-    left: 0;
-    right: 0;
-    margin: auto;
 }
 
 footer > .container > .cell {
-    display: table-cell;
     position: relative;
-    width: 20%;
-
+    margin-bottom: 1em;
 }
 
 footer .email::before {
@@ -755,6 +764,25 @@ footer .ventures-icon {
     height: 1em;
     width: 1em;
     margin-right: .2em;
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    footer .container {
+        display: table;
+        position: relative;
+    }
+
+    footer > .container > .cell {
+        display: table-cell;
+        width: 20%;
+        position: relative;
+    }
+    footer > .container {
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
 }
 
 

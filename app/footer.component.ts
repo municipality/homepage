@@ -3,10 +3,10 @@ import {Component} from 'angular2/core';
 @Component ({
     selector : 'footer',
     template : `
+        <div class="logo">
+            <img class="logo logo-image" src="images/logo.png">
+        </div>
         <div class="container">
-            <div class="cell">
-                <img class="logo" src="images/logo.png"> 
-            </div>
             <div class="cell">
                 <p>Software Engineer</p>
                 <p>Designer</p>
