@@ -10,6 +10,12 @@ export class EngineerService {
 
     getProjects () {
         return [
+
+                    {
+                        title : "Scroll Art",
+                        url : "http://scrollart.herokuapp.com",
+                        image : 'images/scroll-art.png'
+                    },
                     {
                         title : 'Photo Wall',
                         url : 'http://brians-photo-wall.herokuapp.com',

@@ -5,7 +5,7 @@ import {ScrollingService} from './scrolling.service';
     selector : 'intro',
     template : `
         <div class="intro-container">
-            <div #image class="intro-image-container" style="background-image: url('images/brian.jpg');">
+            <div #image class="intro-image-container" style="background-image: url('images/brian3.jpg');">
                 <img (load)="introImageLoaded(image)" src='images/brian.jpg' style="display:none;">
             </div>
             <div class="intro-icon-container">

@@ -12,7 +12,10 @@ import {BrianService} from './brian.service';
     directives : [Engineer, Photographer, Designer],
     providers : [BrianService],
     template : `
-        <h2 align="center">The Different Facets</h2>
+        <div class="quote">
+            <h2 align="center" style="color: #3498db;">{{quote}}</h2>
+
+        </div>
         <div class="brian-container">
             <div class="brian-name-tag panel-size">
                 <h2 class="brian-name-tag-text">Brian</h2>
@@ -28,8 +31,11 @@ export class Brian implements OnInit {
     brianContainer;
     startPosition;
     nameTag;
+    quote;
+    quoteAuthor;
     constructor (private scrollingService:ScrollingService) {
-
+        this.quote = "\"My objective is to become well-rounded in life, kind of like a circle.\"";
+        this.quoteAuthor;
     }
 
     ngOnInit () {

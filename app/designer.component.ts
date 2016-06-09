@@ -8,21 +8,23 @@ import {EngineerService} from './engineer.service';
     providers: [EngineerService],
     template : `
         <div class="container designer-container panel-size">
+            <img #bgimage class="intro-image designer-intro-image" src="images/designer-bg.jpg">
             <div *ngIf="currentPanel != 0" class="arrow arrow-left"
-                (click)="brianService.toPrevPanel(container)" (click)="currentPanel=currentPanel-1">
+                (click)="handlePanel('back', bgimage, container)">
                 <img src="images/icons/left-arrow.png">
             </div>
             <div *ngIf="currentPanel != panels.length - 1" class="arrow arrow-right"
-                (click)="brianService.toNextPanel(container)" (click)="currentPanel=currentPanel+1">
+                (click)="handlePanel('forward', bgimage, container)">
                 <img src="images/icons/right-arrow.png">
             </div>
             <div #container class="inner-container designer-inner-container">
                 <div class="panel designer-panel intro panel-size">
+
                     <div class="title">
                         <p>Designer</p>
                     </div>
                     <div class="flex left">
-                        
+
                     </div>
                     <div class="flex right">
 
@@ -92,5 +94,22 @@ export class Designer implements OnInit {
         //     }
         //
         // });
+    }
+
+    handlePanel (direction, bgImage, container) {
+        //direction = back || forward
+        if(direction == "back")
+        {
+            this.currentPanel--;
+            this.brianService.toPrevPanel(container);
+            if(this.currentPanel == 0) {
+                bgImage.style["z-index"] = "0";
+            }
+        }
+        else {
+            this.currentPanel++;
+            this.brianService.toNextPanel(container);
+            bgImage.style["z-index"] = "2";
+        }
     }
 }

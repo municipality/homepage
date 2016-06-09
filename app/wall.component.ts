@@ -15,7 +15,7 @@ import {Footer} from './footer.component';
     directives : [Instagram, Projects, Intro, Brian, Footer],
     template : `
             <intro id="intro"></intro>
-            <brian></brian>
+            <brian id="brian"></brian>
             <!-- <projects id="projects" class="white-bg section"></projects>
             <instagram id="instagram" class="blue-bg section" style="background-image: url('images/plaid.jpg');"></instagram> -->
             <footer></footer>

@@ -8,17 +8,17 @@ import {EngineerService} from './engineer.service';
     providers: [EngineerService],
     template : `
         <div class="container engineer-container panel-size">
+            <img #bgimage class="intro-image engineer-intro-image" src="images/engineer-bg.jpg">
             <div *ngIf="currentPanel != 0" class="arrow arrow-left"
-                (click)="brianService.toPrevPanel(container)" (click)="currentPanel=currentPanel-1">
+                (click)="handlePanel('back', bgimage, container)">
                 <img src="images/icons/left-arrow.png">
             </div>
             <div *ngIf="currentPanel != panels.length - 1" class="arrow arrow-right"
-                (click)="brianService.toNextPanel(container)" (click)="currentPanel=currentPanel+1">
+                (click)="handlePanel('forward', bgimage, container)">
                 <img src="images/icons/right-arrow.png">
             </div>
             <div #container class="inner-container engineer-inner-container">
                 <div class="panel engineer-panel intro panel-size">
-                    <img class="intro-image engineer-intro-image" src="images/engineer-bg.jpg">
                     <div class="title">
                         <p>Software Engineer</p>
                     </div>
@@ -83,5 +83,22 @@ export class Engineer implements OnInit {
 
     getSkillset () {
         this.skillset = this.engineerService.getSkillset();
+    }
+
+    handlePanel (direction, bgImage, container) {
+        //direction = back || forward
+        if(direction == "back")
+        {
+            this.currentPanel--;
+            this.brianService.toPrevPanel(container);
+            if(this.currentPanel == 0) {
+                bgImage.style["z-index"] = "0";
+            }
+        }
+        else {
+            this.currentPanel++;
+            this.brianService.toNextPanel(container);
+            bgImage.style["z-index"] = "2";
+        }
     }
 }

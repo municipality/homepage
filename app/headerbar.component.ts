@@ -5,13 +5,10 @@ import {ScrollingService} from './scrolling.service';
 @Component({
     selector : 'headerbar',
     template : `
-        <div class="headerbar-name">
-            <p>Brian Lee</p>
-        </div>
+        <img class="logo" src="images/logo.png">
         <ul class="headerbar-options">
             <li (click)="scrollTo('intro')">Intro</li>
-            <li (click)="scrollTo('projects')">Projects</li>
-            <li (click)="scrollTo('instagram')">Instagram</li>
+            <li (click)="scrollTo('brian')">Facets</li>
         </ul>
     `
 })

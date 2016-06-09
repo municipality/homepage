@@ -113,6 +113,18 @@ headerbar {
 
 }
 
+headerbar .logo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    margin: auto;
+}
+.logo {
+    width: 80px;
+    height: 30px;
+}
+
 .headerbar-options {
     display: inline-block;
     position: absolute;
@@ -311,7 +323,11 @@ intro {
 brian {
     display: block;
     position: relative;
-    padding-top: 200px;
+    background-color: white;
+}
+
+brian .quote {
+    padding: 200px 250px;
 }
 
 brian .panel-size {
@@ -402,12 +418,14 @@ brian .panel {
     min-height: 600px;
     position: relative;
     z-index: 2;
+    background-color: rgba(0,0,0, .5);
 }
 
 brian .intro {
     position: relative;
     display: flex;
     z-index: 0;
+    background-color: transparent;
 }
 
 brian .intro > .flex {
@@ -417,6 +435,12 @@ brian .intro > .flex {
 
 brian .intro > .left {
     /*background-color: rgba(255, 255, 255, .4);*/
+}
+
+brian .intro-image {
+    position: absolute;
+    width: 100%;
+    z-index: 0;
 }
 
 
@@ -430,14 +454,12 @@ engineer {
 }
 
 engineer .engineer-intro-image {
-    position: absolute;
-    width: 100%;
-    z-index: -1;
+
 }
 
 .engineer-panel.skills {
     /*background-color: #D6546B;*/
-    background-color: rgba(200, 50, 50, 1);
+    /*background-color: rgba(200, 50, 50, 1);*/
 }
 
 
@@ -492,7 +514,7 @@ designer {
 
 .designer-panel.projects {
     /*background-color: #D6546B;*/
-    background-color: rgba(200, 50, 50, 1);
+    /*background-color: rgba(255,127,80, 1)*/
 }
 
 
@@ -694,6 +716,13 @@ footer {
 
 }
 
+footer .logo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
 footer .container {
     display: table;
     position: relative;
@@ -717,9 +746,22 @@ footer .email::before {
     margin: auto 5px;
 }
 
-footer .email {
+footer a, footer p {
+    /*color: #3498db;*/
     color: white;
     text-decoration: none;
+}
+
+footer h4  {
+    color: gray;
+}
+
+
+footer .ventures-icon {
+    float: left;
+    height: 18px;
+    width: 18px;
+    margin-right: 5px;
 }
 
 

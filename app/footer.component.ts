@@ -4,19 +4,20 @@ import {Component} from 'angular2/core';
     selector : 'footer',
     template : `
         <div class="container">
-            <div class="cell logo">
+            <div class="cell">
+                <img class="logo" src="images/logo.png"> 
             </div>
             <div class="cell">
                 <p>Software Engineer</p>
-                <p>Photographer</p>
+                <p>Designer</p>
             </div>
             <div class="cell">
                 <h4>Contact</h4>
-                <a class="email" href="mailto:ucsdblee@gmail.com">ucsdblee@gmail.com</a>
+                <a class="email link" href="mailto:ucsdblee@gmail.com">ucsdblee@gmail.com</a>
             </div>
             <div class="cell">
                 <h4>Follow My Ventures</h4>
-                <p>@best_blee_it</p>
+                <a class="ig-name link" href="http://instagram.com/best_blee_it" target="_blank"><img class="ventures-icon" src='images/icons/instagram-icon.png'>@best_blee_it</a>
             </div>
         </div>
     `
