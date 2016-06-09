@@ -3,7 +3,7 @@ body {
     background-color: rgba(0, 0, 0, .1);
     /*background-color: #3498db;*/
     font-family: Roboto, sans-serif;
-    min-width: 1000px;
+    min-width: 350px;
 }
 
 p {
@@ -148,7 +148,7 @@ headerbar .logo {
 wall {
     display: block;
     /*padding: 40px 0 0 0;*/
-    min-width: 1000px;
+    /*min-width: 1000px;*/
     width: 100%;
     /*margin: 0 300px 0 300px;*/
     position: absolute;
@@ -173,7 +173,7 @@ intro {
     /*width: 120%;*/
     width: 100%;
     min-height: 600px;
-    min-width: 830px;
+    /*min-width: 830px;*/
     overflow : hidden;
     z-index: 2;
 }
@@ -331,7 +331,7 @@ brian .quote {
 }
 
 brian .panel-size {
-    min-width: 1000px;
+    /*min-width: 1000px;*/
     min-height: 600px;
 }
 
@@ -414,7 +414,7 @@ brian .inner-container {
 
 brian .panel {
     flex: 1;
-    min-width: 1000px;
+    /*min-width: 1000px;*/
     min-height: 600px;
     position: relative;
     z-index: 2;

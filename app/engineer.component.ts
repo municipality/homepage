@@ -66,12 +66,12 @@ export class Engineer implements OnInit {
 
         var panelWidth = this.innerContainer.parentElement.offsetWidth;
 
-        this.innerContainer.style.width = panelWidth * this.panels.length + "px";
+        this.innerContainer.style.width = this.panels.length * 100 + "%";
 
         window.addEventListener("resize", (e) => {
-            panelWidth = this.innerContainer.parentElement.offsetWidth;
-            this.innerContainer.style.width = panelWidth * this.panels.length + "px";
-            this.innerContainer.style.left = panelWidth * this.currentPanel * -1 + "px";
+            // panelWidth = this.innerContainer.parentElement.offsetWidth;
+            // this.innerContainer.style.width = panelWidth * this.panels.length + "px";
+            // this.innerContainer.style.left = panelWidth * this.currentPanel * -1 + "px";
         });
 
         document.addEventListener("scroll", this.onScroll);

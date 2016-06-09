@@ -43,7 +43,7 @@ export class Wall implements OnInit {
     resizeElements () {
         for(let i = 0; i < this.elementArray.length; i++) {
             //this.elementArray[i].style.width = window.innerWidth + "px";
-            this.elementArray[i].style.height = window.innerHeight + "px";
+            //this.elementArray[i].style.height = window.innerHeight + "px";
         }
     }
 }

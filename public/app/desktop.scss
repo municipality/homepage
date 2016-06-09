@@ -1,0 +1,64 @@
+$primaryColor: #3498db;
+
+$primaryFont: Roboto, sans-serif;
+
+$appBackgroundColor: rgba(0, 0, 0, .1);
+
+$appMinWidth: 1000px;
+
+body {
+    margin: 0;
+    background-color: $appBackgroundColor;
+    font-family: $primaryFont;
+    min-width: appMinWidth;
+}
+
+p {
+    color: $primaryColor;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: white;
+}
+
+h2 {
+    font-weight: 100;
+    font-size: 2.5em;
+}
+
+#app-loading-mask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    width: 80px;
+    height: 30px;
+}
+
+/*headerbar*/
+headerbar {
+    display: block;
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    margin: 0 0 15px 0;
+    top: 0;
+    left: 0;
+    background-color: rgba(232, 158, 205, .8);
+    z-index: 3;
+
+    .logo {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 20px;
+        margin: auto;
+    }
+
+    
+}
