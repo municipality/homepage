@@ -66,12 +66,12 @@ export class Designer implements OnInit {
 
         var panelWidth = this.innerContainer.parentElement.offsetWidth;
 
-        this.innerContainer.style.width = panelWidth * this.panels.length + "px";
+        this.innerContainer.style.width = 100 * this.panels.length + "%";
 
         window.addEventListener("resize", (e) => {
-            panelWidth = this.innerContainer.parentElement.offsetWidth;
-            this.innerContainer.style.width = panelWidth * this.panels.length + "px";
-            this.innerContainer.style.left = panelWidth * this.currentPanel * -1 + "px";
+            // panelWidth = this.innerContainer.parentElement.offsetWidth;
+            // this.innerContainer.style.width = panelWidth * this.panels.length + "px";
+            // this.innerContainer.style.left = panelWidth * this.currentPanel * -1 + "px";
         });
 
         document.addEventListener("scroll", this.onScroll);

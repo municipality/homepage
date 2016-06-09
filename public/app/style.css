@@ -327,7 +327,7 @@ brian {
 }
 
 brian .quote {
-    padding: 200px 250px;
+    padding: 200px 0px;
 }
 
 brian .panel-size {
@@ -345,7 +345,7 @@ brian .panel-size {
 .brian-name-tag-text {
     position: absolute;
     top: 250px;
-    left: 300px;
+    left: 15%;
     transform: translate(0, -100%);
     font-size: 4em;
 }
@@ -356,7 +356,7 @@ brian .brian-container {
 
 brian .title {
     position: absolute;
-    left: 300px;
+    left: 15%;
     top: 300px;
 }
 
@@ -410,6 +410,7 @@ brian .inner-container {
     top: 0;
     left: 0;
     display: flex;
+    width: 200%;
 }
 
 brian .panel {
@@ -514,15 +515,16 @@ designer {
     position: relative;
     display: block;
     background-color: rgba(255, 0, 0,.4);
+    overflow: hidden;
 }
 
-.designer-panel.projects {
+designer .designer-panel.projects {
     /*background-color: #D6546B;*/
     /*background-color: rgba(255,127,80, 1)*/
 }
 
 
-.designer-panel.projects .header {
+designer .designer-panel.projects .header {
     position: relative;
     text-align: center;
 }
@@ -538,12 +540,12 @@ designer .designer-panel.projects .projects-table {
 
 designer .designer-panel.projects .projects-table-cell {
     display: table-cell;
-    padding: 0 20px;
+    padding: 0 .1em;
 }
 
 designer .designer-panel.projects .projects-table-cell img {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 10em;
+    max-height: 10em;
 }
 
 photographer {
@@ -715,7 +717,7 @@ footer {
     display: block;
     width: 100%;
     position: relative;
-    padding: 50px 0 200px 0;
+    padding: 5em 0 10em 0;
     background-color: rgba(0, 0, 51, 1);
 
 }
@@ -747,7 +749,7 @@ footer .email::before {
     content: url('../images/icons/email-icon.png');
     top: 0;
     bottom: 0;
-    margin: auto 5px;
+    margin: auto .2em;
 }
 
 footer a, footer p {
@@ -763,9 +765,9 @@ footer h4  {
 
 footer .ventures-icon {
     float: left;
-    height: 18px;
-    width: 18px;
-    margin-right: 5px;
+    height: 1em;
+    width: 1em;
+    margin-right: .2em;
 }
 
 
