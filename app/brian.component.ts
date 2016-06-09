@@ -12,11 +12,14 @@ import {BrianService} from './brian.service';
     directives : [Engineer, Photographer, Designer],
     providers : [BrianService],
     template : `
-        <div class="brian-name-tag panel-size">
-            <h2 class="brian-name-tag-text">Brian</h2>
+        <h2 align="center">The Different Facets</h2>
+        <div class="brian-container">
+            <div class="brian-name-tag panel-size">
+                <h2 class="brian-name-tag-text">Brian</h2>
+            </div>
+            <engineer></engineer>
+            <designer></designer>
         </div>
-        <engineer></engineer>
-        <designer></designer>
 
 
     `
@@ -30,7 +33,7 @@ export class Brian implements OnInit {
     }
 
     ngOnInit () {
-        this.brianContainer = document.getElementsByTagName("brian")[0];
+        this.brianContainer = document.getElementsByClassName("brian-container")[0];
         this.nameTag = document.getElementsByClassName("brian-name-tag")[0];
         document.addEventListener("scroll", this.onScroll.bind(this));
         window.addEventListener("resize", this.onScroll.bind(this));
