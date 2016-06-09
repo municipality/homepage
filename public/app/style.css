@@ -242,7 +242,7 @@ intro {
     position: relative;
 }
 
-.outro-intro {
+intro .outro-intro {
     float: left;
     width: 200px;
     height: 100%;
@@ -250,11 +250,11 @@ intro {
 
 }
 
-.outro-inner-panel {
+intro .outro-inner-panel {
     /*background-color: rgba(255, 255, 255, .7);*/
 }
 
-.outro-inner-panel > div {
+intro .outro-panel > div {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -262,61 +262,47 @@ intro {
     z-index: 3;
 }
 
-.outro-inner-panel > div h2 {
+intro .outro-panel.right {
+    left: 4em;
+}
+
+intro .outro-panel.left {
+    right: 4em;
+}
+
+
+
+.outro-panel > div h2 {
     font-weight: 100;
     color: white;
     background-color: rgba(255, 255, 255, .7);
 }
 
-.outro-inner-panel > div p {
+.outro-panel > div p {
     background-color: rgba(255, 255, 255, .7);
 }
 
-.outro-inner-panel.left {
-    position: absolute;
-    top: 50px;
-    right: 250px;
-    bottom: 50px;
-    left: 50px;
-}
-
-.outro-inner-panel.left h2 {
+.outro-panel.left h2 {
     text-align: left;
 }
 
-.outro-inner-panel.left p {
+.outro-panel.left p {
     text-align: left;
 }
 
-.outro-inner-panel.right {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    bottom: 50px;
-    left: 250px;
-}
-
-.outro-inner-panel.right h2 {
+.outro-panel.right h2 {
     text-align: right;
 }
 
-.outro-inner-panel.right p {
+.outro-panel.right p {
     text-align: right;
 }
 
-.outro-inner-panel.center {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    bottom: 50px;
-    left: 50px;
-}
-
-.outro-inner-panel.center h2 {
+.outro-panel.center h2 {
     text-align: center;
 }
 
-.outro-inner-panel.center p {
+.outro-panel.center p {
     text-align: center;
 }
 
@@ -474,7 +460,7 @@ engineer .engineer-intro-image {
 }
 
 engineer .skillset-list {
-    padding: 10px 20px;
+    padding: .5em 1em;
     position: relative;
 }
 
@@ -482,12 +468,12 @@ engineer .skillset-list > .skill {
     position: relative;
     height: 20px;
     display: table;
-    padding: 5px 50px;
+    padding: .5em 3em;
 }
 
 engineer .skillset-list > .skill > p {
     float: left;
-    width: 200px;
+    width: 5em;
     display: table-cell;
 }
 
@@ -546,6 +532,7 @@ designer .designer-panel.projects .projects-table-cell {
 designer .designer-panel.projects .projects-table-cell img {
     max-width: 10em;
     max-height: 10em;
+    width: 100%;
 }
 
 photographer {

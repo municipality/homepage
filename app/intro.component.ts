@@ -17,33 +17,24 @@ import {ScrollingService} from './scrolling.service';
             <img #image2 class="outro-image" (load)="outroImageLoaded(image2, image3, moon)" src="images/outro1.jpg">
             <img #image3 class="outro-image" (load)="outroImageLoaded(image2, image3, moon)" src="images/outro2.jpg">
             <img #moon class="outro-image moon" (load)="outroImageLoaded(image2, image3, moon)" src="images/moon.png">
-            <div class="outro-panel first">
-                <div class="outro-intro">
-
-                </div>
-                <div class="outro-inner-panel right">
+            <div class="outro-panel first right">
                     <div>
                         <h2>Inspire Individuality</h2>
                         <p>Stand out from the rest of the crowd.</p>
                         <p>Be the black sheep of the pack.</p>
                     </div>
-                </div>
             </div>
-            <div class="outro-panel">
-                <div class="outro-inner-panel left">
+            <div class="outro-panel second left">
                     <div>
                         <h2>Dream Big</h2>
                         <p>Aim high, and soar among the stars.</p>
                     </div>
-                </div>
             </div>
-            <div class="outro-panel">
-                <div class="outro-inner-panel center">
+            <div class="outro-panel third center">
                     <div>
                         <h2>Change the World</h2>
                         <p>The smallest ideas can have the biggest impact.</p>
                     </div>
-                </div>
             </div>
         </div>
     `
@@ -137,9 +128,9 @@ export class Intro implements OnInit {
         var ycheck = inspireImage.y;
         var orgYCheck = ycheck;
         var outro;
-        var inspire = document.getElementsByClassName("outro-inner-panel")[0];
-        var dream = document.getElementsByClassName("outro-inner-panel")[1];
-        var change = document.getElementsByClassName("outro-inner-panel")[2];
+        var inspire = document.getElementsByClassName("outro-panel")[0];
+        var dream = document.getElementsByClassName("outro-panel")[1];
+        var change = document.getElementsByClassName("outro-panel")[2];
         var isInViewport = this.scrollingService.isInViewport;
         var focus = inspire;
         var prevOffset = 0;
