@@ -271,6 +271,7 @@ intro .titles-container .titles {
 
 intro .titles-container .titles h2 {
     margin: 0;
+    padding: 0 .1em;
     font-weight: 900;
 
 }
@@ -370,7 +371,6 @@ objectives .title {
     margin: 5em auto;
 
 }
-
 
 .outro-container .title > h2 , .outro-inner-panel > div h2 {
     font-weight: 100;

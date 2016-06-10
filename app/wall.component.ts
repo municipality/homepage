@@ -17,7 +17,7 @@ import {Footer} from './footer.component';
     template : `
             <intro id="intro"></intro>
             <objectives id="objectives"></objectives>
-            <brian id="brian"></brian>
+            
             <!-- <projects id="projects" class="white-bg section"></projects>
             <instagram id="instagram" class="blue-bg section" style="background-image: url('images/plaid.jpg');"></instagram> -->
             <footer></footer>

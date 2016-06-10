@@ -39,6 +39,10 @@ export class Headerbar {
                 name: "Objectives"
             },
             {
+                id: "faces",
+                name: "Faces"
+            },
+            {
                 id: "media",
                 name: "Social Media"
             },
