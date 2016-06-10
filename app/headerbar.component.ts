@@ -5,19 +5,67 @@ import {ScrollingService} from './scrolling.service';
 @Component({
     selector : 'headerbar',
     template : `
-        <img class="logo" src="images/logo.png">
-        <ul class="headerbar-options">
-            <li (click)="scrollTo('intro')">Intro</li>
-            <li (click)="scrollTo('brian')">Facets</li>
-        </ul>
+        <div class="bar">
+            <img class="logo" src="images/logo.png">
+            <img class="burger" (click)="handleMenu(menu)"
+            src="images/icons/burger.png">
+            <!-- <ul class="headerbar-options">
+                <li (click)="scrollTo('intro')">Intro</li>
+                <li (click)="scrollTo('brian')">Facets</li>
+            </ul> -->
+        </div>
+        <div #menu class="menu">
+            <div class="menu-container">
+                <div class="menu-item" *ngFor="#item of menuItems" (click)="scrollTo(item.id)">
+                    <p align="center" class="{{item.id}}">{{item.name}}</p>
+                </div>
+            </div>
+        </div>
     `
 })
 export class Headerbar {
+    isMenuShowing : boolean;
+    menuItems : any[];
+    menu;
     constructor (private scrollingService : ScrollingService) {
-
+        this.isMenuShowing = false;
+        this.menuItems = [
+            {
+                id: "intro",
+                name: "Who I Am"
+            },
+            {
+                id: "objectives",
+                name: "Objectives"
+            },
+            {
+                id: "media",
+                name: "Social Media"
+            },
+            {
+                id: "contact",
+                name: "Contact"
+            }
+        ];
     }
 
     scrollTo (id) {
         this.scrollingService.scrollTo(id);
+        this.handleMenu(this.menu);
+    }
+
+    handleMenu (menu) {
+        if(!this.menu) {
+            this.menu = menu;
+        }
+        if(!this.isMenuShowing) {
+            menu.style.right = 0;
+        }
+        else {
+            menu.style.right = "";
+        }
+
+
+        this.isMenuShowing = !this.isMenuShowing;
     }
 }
