@@ -180,7 +180,6 @@ intro {
 
 .intro-image-container {
     position: absolute;
-
     width: 100%;
     min-height: 600px;
     background-size:     cover;                      /* <------ */
@@ -199,8 +198,40 @@ intro {
     position: absolute;
     top: 0;
     bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 15em;
     margin: auto;
 }
+
+intro .titles-container {
+    z-index: 1;
+    height: 100%;
+}
+intro .titles-container .titles {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: translate(0, -50%); /* IE 9 */
+        transform: translate(0, -50%); /* IE 10, Fx 16+, Op 12.1+ */
+
+}
+
+intro .titles-container .titles h2 {
+    margin: 0;
+    font-weight: 900;
+
+}
+intro .titles-container .titles h2.blue {
+    background-color: rgba(52, 152, 219, .7);
+    color: white;
+}
+
+intro .titles-container .titles h2.white {
+    background-color: rgba(255, 255, 255, .7);
+    color:  rgba(52, 152, 219, 1);
+}
+
 
 .intro-box {
     flex: 1;
@@ -227,7 +258,9 @@ intro {
 
 .outro-image.moon {
     left: 50%;
-    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: translate(-50%, 0); /* IE 9 */
+        transform: translate(-50%, 0); /* IE 10, Fx 16+, Op 12.1+ */
     z-index: 1;
     width: 30%;
     height: auto;
@@ -265,11 +298,11 @@ intro .outro-inner-panel > div {
 }
 
 intro .outro-inner-panel.right > div {
-    right: 15%;
+    right: 25%;
 }
 
 intro .outro-inner-panel.left > div {
-    left: 15%;
+    left: 25%;
 }
 
 intro .outro-inner-panel.center > div {
@@ -339,7 +372,9 @@ brian .panel-size {
     position: absolute;
     top: 250px;
     left: 15%;
-    transform: translate(0, -100%);
+    -webkit-transform: translate(0, -100%); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: translate(0, -100%); /* IE 9 */
+        transform: translate(0, -100%); /* IE 10, Fx 16+, Op 12.1+ */
     font-size: 4em;
 }
 
@@ -711,7 +746,7 @@ footer {
     display: block;
     position: relative;
     padding: 5em 1em 10em 1em;
-    background-color: rgba(0, 0, 51, 1);
+    background-color: rgba(0, 0, 15, 1);
 
 }
 
@@ -758,12 +793,20 @@ footer h4  {
     color: gray;
 }
 
+footer .link {
+    display: block;
+}
 
 footer .ventures-icon {
     float: left;
     height: 1em;
     width: 1em;
     margin-right: .2em;
+}
+footer .last-line {
+    position: absolute;
+    bottom: 1em;
+    right: 1em
 }
 
 @media only screen and (min-width: 768px) {
@@ -781,6 +824,12 @@ footer .ventures-icon {
     footer > .container {
         left: 0;
         right: 0;
+        margin: auto;
+    }
+
+    footer > .logo {
+        position: absolute;
+        left: 5em;
         margin: auto;
     }
 }

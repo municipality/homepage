@@ -5,12 +5,18 @@ import {ScrollingService} from './scrolling.service';
     selector : 'intro',
     template : `
         <div class="intro-container">
-            <div #image class="intro-image-container" style="background-image: url('images/brian3.jpg');">
-                <img (load)="introImageLoaded(image)" src='images/brian.jpg' style="display:none;">
+            <div #image class="intro-image-container" style="background-image: url('images/brian-blurred.jpg');">
+                <img (load)="introImageLoaded(image)" src='images/brian-blurred.jpg' style="display:none;">
             </div>
             <div class="intro-icon-container">
-
-                <img class="intro-icon" src="images/brian-icon.png">
+                <img class="intro-icon" src="images/brian-icon-2.png">
+            </div>
+            <div class="titles-container">
+                <div class="titles">
+                    <h2 class="blue">Software Engineer</h2>
+                    <h2 class="white">Designer</h2>
+                    <h2 class="blue">Dreamer</h2>
+                </div>
             </div>
         </div>
         <div class="outro-container">
@@ -22,8 +28,8 @@ import {ScrollingService} from './scrolling.service';
                 <div class="outro-inner-panel right">
                     <div>
                         <h2>Inspire Individuality</h2>
+                        <p>Be unique.</p>
                         <p>Stand out from the rest of the crowd.</p>
-                        <p>Be the black sheep of the pack.</p>
                     </div>
                 </div>
             </div>

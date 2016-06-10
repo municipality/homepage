@@ -34,7 +34,7 @@ export class Brian implements OnInit {
     quote;
     quoteAuthor;
     constructor (private scrollingService:ScrollingService) {
-        this.quote = "\"My objective is to become well-rounded in life, kind of like a circle.\"";
+        this.quote = "\"Take the world out for a ride.\"";
         this.quoteAuthor;
     }
 
