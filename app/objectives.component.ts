@@ -64,27 +64,28 @@ export class Objectives implements OnInit {
 
     ngOnInit () {
         var panel;
-        document.addEventListener("scroll", (e) => {
-            if(this.panels == null || this.panels.length == 0) {
-                this.panels = document.getElementsByClassName("outro-panel");
-                panel = this.panels[this.panels.length/2];
-            }
+        if (!this.mobileService.isMobile()) {
 
-            if (this.container == null) {
-                this.container = document.getElementsByClassName("outro-container")[0];
-            }
+            document.addEventListener("scroll", (e) => {
+                if(this.panels == null || this.panels.length == 0) {
+                    this.panels = document.getElementsByClassName("outro-panel");
+                    panel = this.panels[this.panels.length/2];
+                }
 
-            if (panel.getBoundingClientRect().top > 0) {
-                this.container.style["background-image"] = "url(images/outro1.jpg)";
-            }
-            else {
-                this.container.style["background-image"] = "url(images/outro2.jpg)";
-            }
+                if (this.container == null) {
+                    this.container = document.getElementsByClassName("outro-container")[0];
+                    this.container.className += " desktop"
+                }
 
-            if(!this.mobileService.isMobile()) {
+                if (panel.getBoundingClientRect().top > 0) {
+                    this.container.style["background-image"] = "url(images/outro1.jpg)";
+                }
+                else {
+                    this.container.style["background-image"] = "url(images/outro2.jpg)";
+                }
 
-            }
-        });
+            });
+        }
 
     }
 

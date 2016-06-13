@@ -1,6 +1,8 @@
 import {Component, OnInit} from 'angular2/core';
 import {ScrollingService} from './scrolling.service';
 
+import {MobileService} from './mobile.service';
+
 @Component({
     selector : 'intro',
     template : `
@@ -31,7 +33,8 @@ export class Intro implements OnInit {
     introImage1;
 
 
-    constructor (private scrollingService : ScrollingService) {
+    constructor (private scrollingService : ScrollingService,
+                 private mobileService : MobileService) {
 
     }
 
@@ -55,12 +58,15 @@ export class Intro implements OnInit {
         }
         intro.style.height = window.innerHeight + "px";
         image.style.height = window.innerHeight + "px";
-        document.addEventListener("scroll", (e) => {
-            if(intro && me.scrollingService.isInViewport(intro)) {
-                image.style.bottom = (-1 * Math.floor(window.pageYOffset * .3)) + "px";
-            }
+        if (!this.mobileService.isMobile()) {
+            document.addEventListener("scroll", (e) => {
+                if(intro && me.scrollingService.isInViewport(intro)) {
+                    image.style.bottom = (-1 * Math.floor(window.pageYOffset * .3)) + "px";
+                }
 
-        });
+            });
+        }
+
     }
 
 
