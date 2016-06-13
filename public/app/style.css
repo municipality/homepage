@@ -16,6 +16,16 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
+.white {
+    background-color: rgba(255, 255, 255, .7);
+    color:  rgba(52, 152, 219, 1);
+}
+
+.blue {
+    background-color: rgba(52, 152, 219, .7);
+    color: white;
+}
+
 #app-loading-mask {
     position: fixed;
     width: 100%;
@@ -109,6 +119,7 @@ headerbar .burger {
     position: absolute;
     right: .5em;
     height: 85%;
+    max-height: 1.5em;
     width: auto;
     top: 0;
     bottom: 0;
@@ -275,6 +286,7 @@ intro .titles-container .titles h2 {
     font-weight: 900;
 
 }
+
 intro .titles-container .titles h2.blue {
     background-color: rgba(52, 152, 219, .7);
     color: white;
@@ -300,6 +312,11 @@ intro .titles-container .titles h2.white {
     position: relative;
     width: 100%;
     overflow: hidden;
+    background: black url("../images/outro1.jpg") center no-repeat fixed;
+    background-size: 100% 100%;
+    -webkit-transition: background-image .5s ease-in-out; /* For Safari 3.1 to 6.0 */
+    -ms-transition: background-image .5s ease-in-out;
+    transition: background-image .5s ease-in-out;
 }
 
 .outro-image {
@@ -372,14 +389,18 @@ objectives .title {
 
 }
 
-.outro-container .title > h2 , .outro-inner-panel > div h2 {
+.outro-inner-panel > div h2 {
     font-weight: 100;
     color: black;
     background-color: rgba(255, 255, 255, .7);
+    padding: 0 .1em;
 }
 
 .outro-inner-panel > div p {
-    background-color: rgba(255, 255, 255, .7);
+    /*background-color: rgba(255, 255, 255, .7);*/
+    background-color: rgba(52, 152, 219, .7);
+    color: white;
+    padding: 0 .1em;
 }
 
 .outro-inner-panel.left h2 {
@@ -869,7 +890,7 @@ footer .last-line {
     right: 1em
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1275px) {
     /* For desktop: */
     footer .container {
         display: table;

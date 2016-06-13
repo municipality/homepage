@@ -7,6 +7,7 @@ import {Headerbar} from './headerbar.component';
 import {Tetris} from './tetris.component';
 
 import {ScrollingService} from './scrolling.service';
+import {MobileService} from './mobile.service';
 
 @Component ({
     selector : 'app',
@@ -33,4 +34,4 @@ class App implements OnInit{
 
 
 
-bootstrap(App, [ScrollingService]);
+bootstrap(App, [ScrollingService, MobileService]);
