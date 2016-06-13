@@ -312,11 +312,14 @@ intro .titles-container .titles h2.white {
     position: relative;
     width: 100%;
     overflow: hidden;
-    background: black url("../images/outro1.jpg") center no-repeat fixed;
-    background-size: 100% 100%;
+    background: black url("../images/outro1.jpg") center center no-repeat fixed;
     -webkit-transition: background-image .5s ease-in-out; /* For Safari 3.1 to 6.0 */
     -ms-transition: background-image .5s ease-in-out;
     transition: background-image .5s ease-in-out;
+    -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
 }
 
 .outro-image {
