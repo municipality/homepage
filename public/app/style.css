@@ -320,7 +320,7 @@ intro .titles-container .titles h2.white {
     background-size: auto 100%;
 }
 
-.outro-container.desktop {
+.desktop {
     background-attachment: fixed;
     -webkit-transition: background-image .5s ease-in-out; /* For Safari 3.1 to 6.0 */
     -ms-transition: background-image .5s ease-in-out;
@@ -472,22 +472,37 @@ brian .panel-size {
     font-size: 4em;
 }
 
-brian .brian-container {
+faces {
+    display: block;
+    position: relative;
+    background-color: black;
+}
+
+faces .quote {
+    padding: 200px 0px;
+}
+
+faces .panel-size {
+    /*min-width: 1000px;*/
+    min-height: 400px;
+}
+
+faces .faces-container {
     position: relative;
 }
 
-brian .title {
+faces .title {
     position: absolute;
     left: 15%;
-    top: 300px;
+    top: 200px;
 }
 
-brian .container {
+faces .container {
     position: relative;
     overflow: hidden;
 }
 
-brian .container > .arrow {
+faces .container > .arrow {
     position: absolute;
     height: 100%;
     top: 0;
@@ -498,36 +513,36 @@ brian .container > .arrow {
     z-index: 1000;
 }
 
-brian .container > .arrow:hover {
+faces .container > .arrow:hover {
     opacity: 8;
     cursor: pointer;
 }
-brian .container > .arrow-left {
+faces .container > .arrow-left {
     left: 0px;
 }
 
-brian .container > .arrow-right {
+faces .container > .arrow-right {
     right: 0px;
 }
 
 
-brian .container > .arrow img {
+faces .container > .arrow img {
     position: absolute;
     top: 0;
     bottom: 0;
     margin: auto;
 }
 
-brian .container > .arrow-left img {
+faces .container > .arrow-left img {
     left: 10px;
 }
 
-brian .container > .arrow-right img {
+faces .container > .arrow-right img {
     right: 10px;
 }
 
 
-brian .inner-container {
+faces .inner-container {
     position: absolute;
     top: 0;
     left: 0;
@@ -539,7 +554,7 @@ brian .inner-container {
     width: 200%;
 }
 
-brian .panel {
+faces .panel {
     flex: 1;
     /*min-width: 1000px;*/
     min-height: 600px;
@@ -548,7 +563,7 @@ brian .panel {
     background-color: rgba(0,0,0, .5);
 }
 
-brian .intro {
+faces .intro {
     position: relative;
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
     display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
@@ -559,16 +574,16 @@ brian .intro {
     background-color: transparent;
 }
 
-brian .intro > .flex {
+faces .intro > .flex {
     flex: 1;
     z-index: 0;
 }
 
-brian .intro > .left {
+faces .intro > .left {
     /*background-color: rgba(255, 255, 255, .4);*/
 }
 
-brian .intro-image {
+faces .intro-image {
     position: absolute;
     width: 100%;
     z-index: 0;
@@ -577,6 +592,7 @@ brian .intro-image {
     bottom: 0;
     margin: auto;*/
 }
+
 
 
 /*engineer css */
@@ -595,6 +611,10 @@ engineer .engineer-intro-image {
 .engineer-panel.skills {
     /*background-color: #D6546B;*/
     /*background-color: rgba(200, 50, 50, 1);*/
+}
+
+engineer .container {
+    background-image: url("../images/engineer-bg.jpg");
 }
 
 

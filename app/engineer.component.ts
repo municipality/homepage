@@ -2,19 +2,19 @@ import {Component, OnInit} from 'angular2/core';
 
 import {BrianService} from './brian.service';
 import {EngineerService} from './engineer.service';
+import {MobileService} from './mobile.service';
 
 @Component ({
     selector : 'engineer',
     providers: [EngineerService],
     template : `
-        <div class="container engineer-container panel-size">
-            <img #bgimage class="intro-image engineer-intro-image" src="images/engineer-bg.jpg">
+        <div id="engineer-container" class="container engineer-container panel-size">
             <div *ngIf="currentPanel != 0" class="arrow arrow-left"
-                (click)="handlePanel('back', bgimage, container)">
+                (click)="handlePanel('back', container)">
                 <img src="images/icons/left-arrow.png">
             </div>
             <div *ngIf="currentPanel != panels.length - 1" class="arrow arrow-right"
-                (click)="handlePanel('forward', bgimage, container)">
+                (click)="handlePanel('forward', container)">
                 <img src="images/icons/right-arrow.png">
             </div>
             <div #container class="inner-container engineer-inner-container">
@@ -52,13 +52,17 @@ export class Engineer implements OnInit {
     panels;
     currentPanel;
     skillset;
-    constructor (private brianService:BrianService, private engineerService : EngineerService) {
+    constructor (private brianService:BrianService, private engineerService : EngineerService, private mobileService : MobileService) {
         this.skillset = [];
     }
 
     ngOnInit () {
 
         this.getSkillset();
+
+        if (!this.mobileService.isMobile()) {
+            document.getElementById("engineer-container").className += " desktop";
+        }
 
         this.panels = document.getElementsByClassName("engineer-panel");
         this.innerContainer = document.getElementsByClassName("engineer-inner-container")[0];
@@ -69,9 +73,9 @@ export class Engineer implements OnInit {
         this.innerContainer.style.width = this.panels.length * 100 + "%";
 
         window.addEventListener("resize", (e) => {
-            // panelWidth = this.innerContainer.parentElement.offsetWidth;
-            // this.innerContainer.style.width = panelWidth * this.panels.length + "px";
-            // this.innerContainer.style.left = panelWidth * this.currentPanel * -1 + "px";
+            panelWidth = this.innerContainer.parentElement.offsetWidth;
+            this.innerContainer.style.width = panelWidth * this.panels.length + "px";
+            this.innerContainer.style.left = panelWidth * this.currentPanel * -1 + "px";
         });
 
         document.addEventListener("scroll", this.onScroll);
@@ -85,20 +89,17 @@ export class Engineer implements OnInit {
         this.skillset = this.engineerService.getSkillset();
     }
 
-    handlePanel (direction, bgImage, container) {
+    handlePanel (direction, container) {
         //direction = back || forward
-        if(direction == "back")
-        {
+        if (direction == "back") {
             this.currentPanel--;
             this.brianService.toPrevPanel(container);
             if(this.currentPanel == 0) {
-                bgImage.style["z-index"] = "0";
             }
         }
         else {
             this.currentPanel++;
             this.brianService.toNextPanel(container);
-            bgImage.style["z-index"] = "2";
         }
     }
 }

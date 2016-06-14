@@ -8,16 +8,17 @@ import {Intro} from './intro.component';
 import {Objectives} from './objectives.component';
 import {Brian} from './brian.component';
 import {Footer} from './footer.component';
+import {Faces} from './faces.component';
 
 
 
 @Component({
     selector : 'wall',
-    directives : [Instagram, Projects, Intro, Brian, Footer, Objectives],
+    directives : [Instagram, Projects, Intro, Brian, Footer, Objectives, Faces],
     template : `
             <intro id="intro"></intro>
             <objectives id="objectives"></objectives>
-            
+            <faces></faces>
             <!-- <projects id="projects" class="white-bg section"></projects>
             <instagram id="instagram" class="blue-bg section" style="background-image: url('images/plaid.jpg');"></instagram> -->
             <footer></footer>
