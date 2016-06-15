@@ -1,4 +1,4 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, OnInit, Input} from 'angular2/core';
 
 import {BrianService} from './brian.service';
 import {EngineerService} from './engineer.service';
@@ -8,7 +8,8 @@ import {MobileService} from './mobile.service';
     selector : 'engineer',
     providers: [EngineerService],
     template : `
-        <div id="engineer-container" class="container face engineer-container panel-size">
+        <div id="engineer-container" [ngClass]="{desktop: isDesktop}"
+        class="container face engineer-container panel-size">
             <div *ngIf="currentPanel != 0" class="arrow arrow-left"
                 (click)="handlePanel('back', container)">
                 <img src="images/icons/left-arrow.png">
@@ -52,6 +53,7 @@ export class Engineer implements OnInit {
     panels;
     currentPanel;
     skillset;
+    @Input() isDesktop;
     constructor (private brianService:BrianService, private engineerService : EngineerService, private mobileService : MobileService) {
         this.skillset = [];
     }

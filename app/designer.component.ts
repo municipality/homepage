@@ -1,4 +1,4 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, OnInit, Input} from 'angular2/core';
 
 import {BrianService} from './brian.service';
 import {EngineerService} from './engineer.service';
@@ -7,7 +7,8 @@ import {EngineerService} from './engineer.service';
     selector : 'designer',
     providers: [EngineerService],
     template : `
-        <div class="container face designer-container panel-size">
+        <div [ngClass]="{desktop: isDesktop}"
+        class="container face designer-container panel-size">
             <div *ngIf="currentPanel != 0" class="arrow arrow-left"
                 (click)="handlePanel('back', bgimage, container)">
                 <img src="images/icons/left-arrow.png">
@@ -51,6 +52,7 @@ export class Designer implements OnInit {
     panels;
     currentPanel;
     projects;
+    @Input() isDesktop;
     constructor (private brianService:BrianService, private engineerService : EngineerService) {
         this.projects = [];
     }

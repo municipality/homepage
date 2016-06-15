@@ -10,11 +10,13 @@ import {MobileService} from './mobile.service';
     directives : [Engineer, Designer],
     providers : [BrianService],
     template : `
-        <div class="intro">
-
+        <div class="faces-intro">
+            <div class="section-header">
+                <h2 align="center" class="blue">Faces</h2>
+            </div>
         </div>
-        <engineer></engineer>
-        <designer></designer>
+        <engineer [isDesktop]=isDesktop></engineer>
+        <designer [isDesktop]=isDesktop></designer>
 
     `
 })
@@ -23,13 +25,10 @@ export class Faces implements OnInit {
     constructor (private mobileService : MobileService) {
 
     }
-
+    isDesktop = false;
     ngOnInit () {
         if (!this.mobileService.isMobile()) {
-            var facesContainers = document.getElementsByClassName("face");
-            for (let i = 0; i < facesContainers.length; i++) {
-                facesContainers[i].className += " desktop";
-            }
+            this.isDesktop = true;
         }
     }
 }

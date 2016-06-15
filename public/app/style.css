@@ -218,10 +218,10 @@ wall {
     top: 0;
 }
 
-.section-header {
+/*.section-header {
     -webkit-margin-before: 0em;
     -webkit-margin-after: 1em;
-}
+}*/
 
 /*intro*/
 intro {
@@ -326,6 +326,8 @@ intro .titles-container .titles h2.white {
     background-attachment: fixed;
     -webkit-transition: background-image .5s ease-in-out; /* For Safari 3.1 to 6.0 */
     -ms-transition: background-image .5s ease-in-out;
+    -o-transition: background-image .5s ease-in-out;
+    -moz-transition: background-image .5s ease-in-out;
     transition: background-image .5s ease-in-out;
     -webkit-background-size: 100% 100%;
           -moz-background-size: 100% 100%;
@@ -480,14 +482,32 @@ faces {
     background-color: black;
 }
 
-faces .quote {
-    padding: 200px 0px;
+faces > .faces-intro {
+    width: 100%;
+    height: 10em;
+    background-color: white;
+    position: relative;
+}
+
+faces > .faces-intro > .section-header {
+    margin: auto;
+    top: 50%;
+    position: absolute;
+    width: 100%;
+    -webkit-transform: translate(0, -50%); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: translate(0, -50%); /* IE 9 */
+        transform: translate(0, -50%); /* IE 10, Fx 16+, Op 12.1+ */
+}
+
+faces > .faces-intro > .section-header > h2 {
+    margin: 0;
 }
 
 faces .panel-size {
     /*min-width: 1000px;*/
     min-height: 400px;
 }
+
 
 faces .faces-container {
     position: relative;
