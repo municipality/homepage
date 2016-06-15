@@ -8,7 +8,7 @@ import {MobileService} from './mobile.service';
     selector : 'engineer',
     providers: [EngineerService],
     template : `
-        <div id="engineer-container" class="container engineer-container panel-size">
+        <div id="engineer-container" class="container face engineer-container panel-size">
             <div *ngIf="currentPanel != 0" class="arrow arrow-left"
                 (click)="handlePanel('back', container)">
                 <img src="images/icons/left-arrow.png">
@@ -36,7 +36,7 @@ import {MobileService} from './mobile.service';
                             <p>{{skill.name}}</p>
                                 <div class="bar">
 
-                                    <div class="inner-bar" style="width:{{skill.percent + '%'}};"> </div>
+                                    <div class="inner-bar" [ngStyle]="{'width': skill.percent}"> </div>
                                 </div>
                             </div>
                         </div>
@@ -59,10 +59,6 @@ export class Engineer implements OnInit {
     ngOnInit () {
 
         this.getSkillset();
-
-        if (!this.mobileService.isMobile()) {
-            document.getElementById("engineer-container").className += " desktop";
-        }
 
         this.panels = document.getElementsByClassName("engineer-panel");
         this.innerContainer = document.getElementsByClassName("engineer-inner-container")[0];

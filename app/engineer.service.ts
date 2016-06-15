@@ -46,23 +46,23 @@ export class EngineerService {
             //percent: percent mastery
             {
                 name: "Javascript",
-                percent: 80
+                percent: "80%"
             },
             {
                 name: "Java",
-                percent: 60
+                percent: "60%"
             },
             {
                 name: "C",
-                percent: 50
+                percent: "50%"
             },
             {
                 name: "HTML",
-                percent: 60
+                percent: "60%"
             },
             {
                 name: "CSS",
-                percent: 60
+                percent: "60%"
             }
         ];
     }

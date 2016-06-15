@@ -674,6 +674,10 @@ designer {
     overflow: hidden;
 }
 
+designer .container {
+    background-image: url("../images/designer-bg.jpg");
+}
+
 designer .designer-panel.projects {
     /*background-color: #D6546B;*/
     /*background-color: rgba(255,127,80, 1)*/

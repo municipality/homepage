@@ -18,7 +18,7 @@ import {Faces} from './faces.component';
     template : `
             <intro id="intro"></intro>
             <objectives id="objectives"></objectives>
-            <faces></faces>
+            <faces id="faces"></faces>
             <!-- <projects id="projects" class="white-bg section"></projects>
             <instagram id="instagram" class="blue-bg section" style="background-image: url('images/plaid.jpg');"></instagram> -->
             <footer></footer>

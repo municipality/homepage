@@ -7,8 +7,7 @@ import {EngineerService} from './engineer.service';
     selector : 'designer',
     providers: [EngineerService],
     template : `
-        <div class="container designer-container panel-size">
-            <img #bgimage class="intro-image designer-intro-image" src="images/designer-bg.jpg">
+        <div class="container face designer-container panel-size">
             <div *ngIf="currentPanel != 0" class="arrow arrow-left"
                 (click)="handlePanel('back', bgimage, container)">
                 <img src="images/icons/left-arrow.png">
@@ -69,9 +68,9 @@ export class Designer implements OnInit {
         this.innerContainer.style.width = 100 * this.panels.length + "%";
 
         window.addEventListener("resize", (e) => {
-            // panelWidth = this.innerContainer.parentElement.offsetWidth;
-            // this.innerContainer.style.width = panelWidth * this.panels.length + "px";
-            // this.innerContainer.style.left = panelWidth * this.currentPanel * -1 + "px";
+            panelWidth = this.innerContainer.parentElement.offsetWidth;
+            this.innerContainer.style.width = panelWidth * this.panels.length + "px";
+            this.innerContainer.style.left = panelWidth * this.currentPanel * -1 + "px";
         });
 
         document.addEventListener("scroll", this.onScroll);
@@ -102,14 +101,10 @@ export class Designer implements OnInit {
         {
             this.currentPanel--;
             this.brianService.toPrevPanel(container);
-            if(this.currentPanel == 0) {
-                bgImage.style["z-index"] = "0";
-            }
         }
         else {
             this.currentPanel++;
             this.brianService.toNextPanel(container);
-            bgImage.style["z-index"] = "2";
         }
     }
 }
