@@ -36,7 +36,7 @@ import {MobileService} from './mobile.service';
                             <p>{{skill.name}}</p>
                                 <div class="bar">
 
-                                    <div class="inner-bar" style="width:{{skill.percent}}; "> </div>
+                                    <div class="inner-bar" style="width:{{skill.percent + '%'}};"> </div>
                                 </div>
                             </div>
                         </div>
