@@ -385,11 +385,11 @@ objectives .outro-inner-panel > div {
 }
 
 objectives .outro-inner-panel.right > div {
-    right: 25%;
+    right: 33%;
 }
 
 objectives .outro-inner-panel.left > div {
-    left: 25%;
+    left: 33%;
 }
 
 objectives .outro-inner-panel.center > div {
@@ -973,28 +973,27 @@ footer .last-line {
     right: 1em
 }
 
-@media only screen and (min-width: 1275px) {
+@media only screen and (min-width: 695px) {
     /* For desktop: */
     footer .container {
         display: table;
         position: relative;
     }
 
-    footer > .container > .cell {
+    footer .container > .cell {
         display: table-cell;
         width: 20%;
         position: relative;
     }
-    footer > .container {
+    footer .container {
         left: 0;
         right: 0;
         margin: auto;
     }
 
-    footer > .logo {
-        position: absolute;
-        left: 5em;
+    footer  .logo {
         margin: auto;
+        display: table-cell;
     }
 }
 
