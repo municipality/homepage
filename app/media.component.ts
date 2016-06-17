@@ -1,4 +1,4 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, OnInit, AfterViewInit} from 'angular2/core';
 
 import {Instagram} from './instagram.component';
 
@@ -18,19 +18,15 @@ import {Instagram} from './instagram.component';
             </div>
         </div>
         <div class="container">
-            <instagram *ngIf="selected =='instagram'"></instagram>
+            <instagram [style.display]="selected =='instagram' ? 'block' : 'none'"></instagram>
         </div>
     `
 })
 
-export class Social implements OnInit{
+export class Social implements OnInit, AfterViewInit{
     tabs = [
         {
             name: "instagram",
-            src: "images/icons/instagram-icon.png"
-        },
-        {
-            name: "instagram-test",
             src: "images/icons/instagram-icon.png"
         }
     ];
@@ -41,6 +37,10 @@ export class Social implements OnInit{
     }
 
     ngOnInit () {
+
+    }
+
+    ngAfterViewInit () {
 
     }
 

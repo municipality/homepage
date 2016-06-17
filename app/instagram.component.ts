@@ -6,12 +6,15 @@ import {InstagramService} from './instagram.service';
     providers : [InstagramService],
     template : `
         <div class="ig-container">
+
             <div *ngIf="showLoadingMask" class="ig-loading">
                 <div class="ig-loading-tag">
                     <div class="loader"></div>
                 </div>
             </div>
+            <p class="header">@best_blee_it<br><br>Most Recent</p>
             <div class="ig-image-container">
+
                 <div class="ig-image" *ngFor="#image of images; #last = last">
                     <img #im *ngIf="!last" class="hover-fade" (load)="loaded(im)" (click)="handleClick(image)" src={{image.thumbnail.url}}>
                     <a *ngIf="last" class="ig-last-recent" href="http://instagram.com/best_blee_it" target="_blank">
@@ -53,9 +56,6 @@ export class Instagram implements OnInit {
                 this.images.push(this.igItems[i].images);
 
             }
-
-
-
         });
     }
 

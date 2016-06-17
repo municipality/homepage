@@ -10,6 +10,8 @@ import {Footer} from './footer.component';
 import {Faces} from './faces.component';
 import {Social} from './media.component';
 
+/// <reference path="fbsdk.d.ts" />
+
 @Component({
     selector : 'wall',
     directives : [Instagram, Projects, Intro, Footer, Objectives, Faces, Social],
@@ -38,6 +40,7 @@ export class Wall implements OnInit {
         window.addEventListener("resize", (e) => {
             this.resizeElements();
         });
+
 
 
     }

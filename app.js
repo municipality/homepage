@@ -50,6 +50,14 @@ router.get('/instagram-recents', function(req, res) {
     // });
 });
 
+router.get('/facebook-recents', function(req, res) {
+    var access_token = "EAACEdEose0cBAGSXNBdQGZCPeiZB0IDfGfZB4RqH8ZAuevYtOeIV91KuMcIgZBnq20f2bSjLYSwEng2GOSEiF1FcfaJDMdVANUWKuWaPU1ZBxW2IZCmsZBnyYUjBUqpEi7Rre5v8ONwjvzY4fKne3s2nwOaudhMBHAlsx2qdiN9O0QZDZD";
+
+    request("https://graph.facebook.com/me/feed?access_token=" + access_token, function(error, response, body) {
+        res.json(JSON.parse(body));
+    });
+});
+
 router.get('/projects', function(req, res) {
     res.json([
             {
