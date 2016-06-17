@@ -98,17 +98,15 @@ h2 {
 headerbar {
     position: fixed;
     display: block;
-    width: 100%;
-    height: 100%;
     z-index: 1000;
+    width: 100%;
 }
 
 headerbar .bar {
-    position: relative;
+    position: absolute;
     display: block;
     width: 100%;
-    height: 20%;
-    max-height: 3em;
+    height: 3em;
     top: 0;
     left: 0;
     background-color: rgba(0,0,0,1);
@@ -132,11 +130,16 @@ headerbar .burger:hover {
 
 headerbar .menu {
     position: absolute;
+    margin-top: 3em;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, .8);
     right: -100%;
     transition: .3s;
+}
+
+headerbar .menu > .menu-container {
+    background-color: rgba(0, 0, 0, .8);
 }
 
 @media only screen and (min-width: 768px) {
@@ -491,7 +494,7 @@ faces > .faces-intro {
 
 faces > .faces-intro > .section-header {
     margin: auto;
-    top: 50%;
+    bottom:0;
     position: absolute;
     width: 100%;
     -webkit-transform: translate(0, -50%); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
@@ -812,12 +815,18 @@ projects {
 /*Instagram component*/
 instagram {
     display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .ig-container {
-    position: relative;
+    position: absolute;
     width : 100%;
-    height: 150px;
+    height: 10em;
+    top: 0;
+    bottom: 0;
+    margin: auto;
 }
 
 .ig-loading {
@@ -884,7 +893,7 @@ instagram {
     left: 0;
     display: none;
     background-color: rgba(0,0,0,.7);
-    z-index: 300;
+    z-index: 9999;
 }
 
 #ig-popup {
@@ -902,6 +911,64 @@ instagram {
     border: 10px solid black;
 }
 
+social {
+    display: block;
+}
+
+social > .intro {
+    width: 100%;
+    height: 10em;
+    background-color: white;
+    position: relative;
+}
+
+social > .intro > .section-header {
+    margin: auto;
+    top: 50%;
+    position: absolute;
+    width: 100%;
+    -webkit-transform: translate(0, -50%); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: translate(0, -50%); /* IE 9 */
+        transform: translate(0, -50%); /* IE 10, Fx 16+, Op 12.1+ */
+}
+
+social > .intro > .section-header > h2 {
+    margin: 0;
+}
+
+social > .tabs {
+    position: relative;
+    height: 2em;
+    padding: .5em 1em;
+    margin: 0;
+    background-color: rgba(52, 152, 219, 1);
+}
+
+social > .tabs > div {
+    display: inline-block;
+    padding: 0 .25em;
+    margin-right: .6em;
+    cursor: pointer;
+}
+
+social > .tabs > div.selected {
+    background-color: white;
+    -moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+
+social > .tabs > div > img {
+    height: 100%;
+    width: auto;
+}
+
+social > .container {
+    position: relative;
+    width: 100%;
+    height: 20em;
+    background-color: white;
+}
 
 /*end Instagram css*/
 

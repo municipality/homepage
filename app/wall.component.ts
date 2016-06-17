@@ -6,22 +6,21 @@ import {Projects} from './projects.component';
 
 import {Intro} from './intro.component';
 import {Objectives} from './objectives.component';
-import {Brian} from './brian.component';
 import {Footer} from './footer.component';
 import {Faces} from './faces.component';
-
-
+import {Social} from './media.component';
 
 @Component({
     selector : 'wall',
-    directives : [Instagram, Projects, Intro, Brian, Footer, Objectives, Faces],
+    directives : [Instagram, Projects, Intro, Footer, Objectives, Faces, Social],
     template : `
             <intro id="intro"></intro>
             <objectives id="objectives"></objectives>
             <faces id="faces"></faces>
+            <social id="media"></social>
             <!-- <projects id="projects" class="white-bg section"></projects>
             <instagram id="instagram" class="blue-bg section" style="background-image: url('images/plaid.jpg');"></instagram> -->
-            <footer></footer>
+            <footer id="footer"></footer>
     `
 })
 export class Wall implements OnInit {

@@ -9,10 +9,6 @@ import {ScrollingService} from './scrolling.service';
             <img class="logo" src="images/logo.png">
             <img class="burger" (click)="handleMenu(menu)"
             src="images/icons/burger.png">
-            <!-- <ul class="headerbar-options">
-                <li (click)="scrollTo('intro')">Intro</li>
-                <li (click)="scrollTo('brian')">Facets</li>
-            </ul> -->
         </div>
         <div #menu class="menu">
             <div class="menu-container">
@@ -47,7 +43,7 @@ export class Headerbar {
                 name: "Social Media"
             },
             {
-                id: "contact",
+                id: "footer",
                 name: "Contact"
             }
         ];

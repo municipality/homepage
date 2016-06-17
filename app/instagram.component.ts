@@ -5,7 +5,6 @@ import {InstagramService} from './instagram.service';
     selector : 'instagram',
     providers : [InstagramService],
     template : `
-        <p class="section-header">Instagram</p>
         <div class="ig-container">
             <div *ngIf="showLoadingMask" class="ig-loading">
                 <div class="ig-loading-tag">
