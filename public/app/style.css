@@ -494,7 +494,7 @@ faces > .faces-intro {
 
 faces > .faces-intro > .section-header {
     margin: auto;
-    bottom:0;
+    top: 50%;
     position: absolute;
     width: 100%;
     -webkit-transform: translate(0, -50%); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
@@ -821,12 +821,9 @@ instagram {
 }
 
 .ig-container {
-    position: absolute;
+    position: relative;
     width : 100%;
-    top: 50%;
-    -webkit-transform: translate(0, -50%); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: translate(0, -50%); /* IE 9 */
-        transform: translate(0, -50%); /* IE 10, Fx 16+, Op 12.1+ */
+
 }
 
 .ig-loading {
@@ -846,26 +843,38 @@ instagram {
     -o-transform: translate(-50%, -50%);
 }
 
-
 .ig-image-container {
     position: relative;
     width: 100%;
     height: inherit;
-    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-    display: -ms-flexbox;      /* TWEENER - IE 10 */
-    display: -webkit-flex;     /* NEW - Chrome */
-    display: flex;
 }
 
 .ig-image {
-    position: relative;
-    flex: 1;
-    -moz-flex: 1;
-    -webkit-flex: 1;
     cursor: pointer;
-    /*margin: 0px 10px 0px 10px;*/
+    position: relative;
+    display: inline-block;
+    margin: .5em;
 }
+
+@media only screen and (min-width: 1000px) {
+    .ig-image-container {
+
+        display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox;      /* TWEENER - IE 10 */
+        display: -webkit-flex;     /* NEW - Chrome */
+        display: flex;
+    }
+
+    .ig-image {
+        flex: 1;
+        -moz-flex: 1;
+        -webkit-flex: 1;
+
+        /*margin: 0px 10px 0px 10px;*/
+    }
+}
+
 
 .ig-image img {
     position: relative;
@@ -974,9 +983,8 @@ social > .tabs > div > img {
 
 social > .container {
     position: relative;
-    height: 20em;
     background-color: white;
-    padding: 0 1em;
+    padding: 1em;
 }
 
 social > .container .header {
